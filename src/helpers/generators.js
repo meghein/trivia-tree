@@ -7,3 +7,7 @@ export function generateRandomArr(arr, newLength) {
   }
   return resultsArr;
 };
+
+export function generateAnswers(incorrect, correct) {
+  
+}

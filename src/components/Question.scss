@@ -1,0 +1,24 @@
+.question {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 40% 30% 30%;
+  grid-template-areas:
+    'title title'
+    'q1 q2'
+    'q3 q4';
+  .q-title {
+    grid-area: title;
+  }
+  .q1 {
+    grid-area: q1;
+  }
+  .q2 {
+    grid-area: q2;
+  }
+  .q3 {
+    grid-area: q3;
+  }
+  .q4 {
+    grid-area: q4;
+  }
+}
