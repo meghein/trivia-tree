@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { generateRandomArr } from 'helpers/generators';
+import Provider from 'context/Provider';
 import questions from 'data/questions.json';
 import QuestionsMap from './QuestionsMap'
 import './App.scss';
@@ -19,6 +20,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <Provider>
       {splashPage && 
         <div>
           <h1>Ready to test your Tandem smarts??</h1>
@@ -28,6 +30,7 @@ export default function App() {
       {!splashPage &&
         <QuestionsMap questions={questionsArr}/>
       }
+      </Provider>
     </div>
   );
 }
