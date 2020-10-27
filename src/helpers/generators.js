@@ -8,6 +8,12 @@ export function generateRandomArr(arr, newLength) {
   return resultsArr;
 };
 
-export function generateAnswers(incorrect, correct) {
-  
+// Creates an answers object that holds booleans for each answer
+export function generateAnswersKey(incorrect, correct) {
+  const answersObj = {};
+  answersObj[correct] = true; 
+  for (const wrong of incorrect) {
+    answersObj[wrong] = false;
+  }
+  return answersObj
 }
