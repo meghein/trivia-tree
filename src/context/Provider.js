@@ -11,7 +11,11 @@ export function useDispatchContext() {
   return useContext(DispatchContext)
 }
 export default function Provider({children}) {
-  const [state, dispatch] = useReducer(reducer, {})
+  const [state, dispatch] = useReducer(reducer, {
+    currentQ: 0,
+    score: null,
+    
+  })
   return (
     <StateContext.Provider value={state}>
       <DispatchContext.Provider value={dispatch}>

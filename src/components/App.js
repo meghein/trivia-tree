@@ -28,7 +28,7 @@ export default function App() {
         </div>
       }
       {!splashPage &&
-        <QuestionsMap questions={questionsArr}/>
+        <Questions questions={questionsArr}/>
       }
       </Provider>
     </div>
