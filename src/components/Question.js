@@ -3,23 +3,22 @@ import React, { useState } from 'react';
 import { generateRandomAnswers, generateAnswersKey } from 'helpers/generators';
 
 export default function Question({question}) {
-  const [results, setResults] = useState('pending')
+  const [results, setResults] = useState('pending');
+  const [answersKey, setAnswersKey] = useState({})
   
   function validate(e) {
-    console.log(e.target.value)
-    const answersKey = (generateAnswersKey(question.correct, question.incorrect))
-    answersKey[e.target.value] === true ? setResults('correct') : setResults('incorrect')
+    const answers =(generateAnswersKey(question.correct, question.incorrect));
+    setAnswersKey(answers);
+    answers[e.target.value] === true ? setResults('correct') : setResults('incorrect');
   }
 
   return (
     <div className='question'>
+      <h2 className='q-title'>{question.question}</h2>
       {results === 'pending' &&
-        <div>
-          <h2 className='q-title'>{question.question}</h2>
-          {generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{
-            return <button key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
-          })}
-      </div>
+        generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{
+          return <button key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
+        })
       }
       {results === 'correct' &&
         <div>
@@ -29,6 +28,7 @@ export default function Question({question}) {
       {results === 'incorrect' &&
         <div>
           <h1>INCORRECT!</h1>
+          <h4>(The correct answer was: {Object.keys(answersKey).find(key => answersKey[key] === true)})</h4>
         </div>
       }
     </div>
