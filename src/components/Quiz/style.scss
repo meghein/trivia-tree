@@ -15,7 +15,7 @@
   background-color: #2A9D8F;
   border-radius: 50px;
   .answer:hover{
-    box-shadow: 10px 10px 5px #2646539f;
+    box-shadow: 5px 5px 5px #2646539f;
   }
   
 
@@ -34,15 +34,15 @@
     background-color: #F4A261;
     border-radius: 50px;
     border-style: none;
-    div > button {
-      opacity: 1.0;
-    }
-    div:hover > button:not(:hover) {
-      opacity: 0.5;
-    }
   }
-
   .results {
     grid-area: answer
   }
+}
+
+#quiz:hover > .answer {
+  opacity: 0.8;
+}
+#quiz:hover > .answer:hover {
+  opacity: 1.0;
 }
