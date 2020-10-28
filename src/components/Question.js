@@ -5,14 +5,14 @@ import { useStateContext, useDispatchContext } from 'context/Provider'
 import { generateRandomAnswers, generateAnswersKey } from 'helpers/generators';
 
 export default function Question({question}) {
-  // const [results, setResults] = useState('pending');
   const [answersKey, setAnswersKey] = useState({})
   const {results} = useStateContext()
+  const dispatch = useDispatchContext()
   
   function validate(e) {
     const answers =(generateAnswersKey(question.correct, question.incorrect));
     setAnswersKey(answers);
-    answers[e.target.value] === true ? setResults('correct') : setResults('incorrect');
+    answers[e.target.value] === true ? dispatch({type: ACTION.RESULTS, payload: 'correct'}) : dispatch({type: ACTION.RESULTS, payload: 'incorrect'});
   }
 
   return (

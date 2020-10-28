@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { generateRandomArr } from 'helpers/generators';
 import Provider from 'context/Provider';
 import questions from 'data/questions.json';
@@ -14,10 +14,6 @@ export default function App() {
     setQuestionsArr(generateRandomArr(questions, 10));
   }
 
-  useEffect(() => {
-    console.log(questionsArr)
-  }, [questionsArr])
-
   return (
     <div className="App">
       <Provider>
@@ -28,7 +24,7 @@ export default function App() {
         </div>
       }
       {!splashPage &&
-        <Questions questions={questionsArr}/>
+        <QuestionsMap questions={questionsArr}/>
       }
       </Provider>
     </div>
