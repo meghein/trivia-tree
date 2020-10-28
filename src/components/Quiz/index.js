@@ -5,7 +5,7 @@ import Correct from './Correct';
 import Incorrect from './Incorrect';
 import ProgressBar from './ProgressBar';
 import Score from './Score';
-// import './Quiz.scss';
+import './style.scss';
 
 export default function Quiz({questions, setQuestions}) {
   const { currentQ, results } = useStateContext()
@@ -13,7 +13,7 @@ export default function Quiz({questions, setQuestions}) {
   return (
     <>
       {currentQ <= 9 &&
-        <div className='quiz'>
+        <div id='quiz'>
         <h1>Question {currentQ + 1}:</h1>
         <h2 className='q-title'>{questions[currentQ].question}</h2>
         {results === 'pending' &&
