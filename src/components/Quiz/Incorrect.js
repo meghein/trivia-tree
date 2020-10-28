@@ -15,7 +15,7 @@ export default function Incorrect() {
   };
 
   return (
-    <div>
+    <div className='results'>
       <h1>INCORRECT!</h1>
       <h4>(The correct answer was: {correctAnswer})</h4>
       {currentQ <= 8 &&

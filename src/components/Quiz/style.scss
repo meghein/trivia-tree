@@ -1,37 +1,48 @@
 #quiz {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
   display: grid;
   grid-template:
     [row1-start] 'question question' 1fr [row1-end]
-    [row2-start] 'a1 a2' 1fr [row2-end]
-    [row3-start] 'a3 a4' 1fr [row3-end]
+    [row2-start] 'answer answer' 2fr [row2-end]
+    [row3-start] 'answer answer' 2fr [row3-end]
     [row4-start] 'progress progress' 1fr [row4-end]
     / 1fr 1fr;
+  gap: 1em;
   text-align: center;
-  height: 400px;
-  border: 1px solid red;
+  height: 600px;
+  width: 600px;
+  padding: 2em;
+  // border: 1px solid red;
+  background-color: #2A9D8F;
+  border-radius: 50px;
+  .answer:hover{
+    box-shadow: 10px 10px 5px #2646539f;
+  }
+  
 
   h2 {
     grid-area: question;
+    color: #E9C46A;
+    width: 80%;
+    margin: auto;
   }
-
 
   .answer {
     font-family: 'Josefin Sans', sans-serif;
-    border: 1px solid red;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #264653;
+    background-color: #F4A261;
+    border-radius: 50px;
+    border-style: none;
+    div > button {
+      opacity: 1.0;
+    }
+    div:hover > button:not(:hover) {
+      opacity: 0.5;
+    }
   }
-  // .a1 {
-  //   grid-area: a1;
-  // }
-  // .a2 {
-  //   grid-area: a2;
-  // }
-  // .a3 {
-  //   grid-area: a3;
-  // }
-  // .a4 {
-  //   grid-area: a4;
-  // }
+
+  .results {
+    grid-area: answer
+  }
 }

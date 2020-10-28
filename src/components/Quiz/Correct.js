@@ -12,7 +12,7 @@ export default function Correct() {
     dispatch({type: ACTION.RESULTS, payload: 'pending'})
   };
   return (
-    <div>
+    <div className='results'>
       <h1>CORRECT!</h1>
       {currentQ <= 8 &&
         <button onClick={handleNext}>Ready for the next question?</button>
