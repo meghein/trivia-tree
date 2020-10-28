@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { ACTION } from 'reducer/reducer';
+import { useStateContext, useDispatchContext } from 'context/Provider'
 // import './Question.scss';
 import { generateRandomAnswers, generateAnswersKey } from 'helpers/generators';
 
 export default function Question({question}) {
-  const [results, setResults] = useState('pending');
+  // const [results, setResults] = useState('pending');
   const [answersKey, setAnswersKey] = useState({})
+  const {results} = useStateContext()
   
   function validate(e) {
     const answers =(generateAnswersKey(question.correct, question.incorrect));

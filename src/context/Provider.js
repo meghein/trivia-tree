@@ -13,8 +13,9 @@ export function useDispatchContext() {
 export default function Provider({children}) {
   const [state, dispatch] = useReducer(reducer, {
     currentQ: 0,
+    results: 'pending',
     score: null,
-    
+
   })
   return (
     <StateContext.Provider value={state}>
