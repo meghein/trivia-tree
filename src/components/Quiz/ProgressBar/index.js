@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStateContext } from 'context/Provider';
-import './ProgressBar.scss'
+import './style.scss'
 
 export default function ProgressBar() {
   const { currentQ } = useStateContext()

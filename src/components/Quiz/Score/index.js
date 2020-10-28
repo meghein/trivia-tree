@@ -3,6 +3,7 @@ import { useStateContext, useDispatchContext } from 'context/Provider';
 import { ACTION } from 'reducer/reducer'
 import questions from 'data/questions.json';
 import { generateRandomArr } from 'helpers/generators';
+import './style.scss';
 
 export default function Score({setQuestions}) {
   const dispatch = useDispatchContext()
