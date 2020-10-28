@@ -3,6 +3,7 @@ import { useStateContext } from 'context/Provider';
 import Answers from './Answers';
 import Correct from './Correct';
 import Incorrect from './Incorrect';
+import ProgressBar from './ProgressBar';
 import Score from './Score';
 // import './Question.scss';
 
@@ -20,6 +21,7 @@ export default function Question({questions, setQuestions}) {
         }
         {results === 'correct' && <Correct/>}
         {results === 'incorrect' && <Incorrect/>}
+        <ProgressBar/>
         </div>
       }
       {currentQ === 10 &&
