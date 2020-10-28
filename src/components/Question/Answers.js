@@ -12,9 +12,9 @@ export default function Answers({question}) {
   })
 
   function validate(e) {
-    const answers = generateAnswersKey(question.correct, question.incorrect);
-    dispatch({type: ACTION.ANSWERS_KEY, payload: answers})
-    answers[e.target.value] === true 
+    const answersKey = generateAnswersKey(question.correct, question.incorrect);
+    dispatch({type: ACTION.ANSWERS_KEY, payload: answersKey})
+    answersKey[e.target.value] === true 
     ? dispatch({type: ACTION.RESULTS, payload: 'correct'})
     : dispatch({type: ACTION.RESULTS, payload: 'incorrect'});
   }
