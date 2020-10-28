@@ -1,8 +1,9 @@
 import React from 'react';
-import {useDispatchContext } from 'context/Provider';
+import { useStateContext, useDispatchContext } from 'context/Provider';
 import { ACTION } from 'reducer/reducer'
 
 export default function Correct() {
+  const { currentQ } = useStateContext();
   const dispatch = useDispatchContext();
 
   function handleNext() {
@@ -13,7 +14,12 @@ export default function Correct() {
   return (
     <div>
       <h1>CORRECT!</h1>
-      <button onClick={handleNext}>Ready for the next question?</button>
+      {currentQ <= 8 &&
+        <button onClick={handleNext}>Ready for the next question?</button>
+      }
+      {currentQ === 9 &&
+        <button onClick={handleNext}>View Score!</button>
+      }
     </div>
   )
 };

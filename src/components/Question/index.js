@@ -13,6 +13,7 @@ export default function Question({questions, setQuestions}) {
     <>
       {currentQ <= 9 &&
         <div className='quiz'>
+        <h1>Question {currentQ + 1}:</h1>
         <h2 className='q-title'>{questions[currentQ].question}</h2>
         {results === 'pending' &&
           <Answers question={questions[currentQ]}/>

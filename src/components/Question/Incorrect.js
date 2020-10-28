@@ -4,7 +4,7 @@ import { ACTION } from 'reducer/reducer'
 
 export default function Incorrect() {
   const dispatch = useDispatchContext();
-  const { answersKey } = useStateContext();
+  const { answersKey, currentQ } = useStateContext();
 
   const correctAnswer = Object.keys(answersKey).find(key => answersKey[key] === true);
 
@@ -18,7 +18,12 @@ export default function Incorrect() {
     <div>
       <h1>INCORRECT!</h1>
       <h4>(The correct answer was: {correctAnswer})</h4>
-      <button onClick={handleNext}>Ready for the next question?</button>
+      {currentQ <= 8 &&
+        <button onClick={handleNext}>Ready for the next question?</button>
+      }
+      {currentQ === 9 &&
+        <button onClick={handleNext}>View Score!</button>
+      }
     </div>
   )
 };
