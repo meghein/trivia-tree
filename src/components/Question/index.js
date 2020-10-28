@@ -6,7 +6,7 @@ import Incorrect from './Incorrect';
 import Score from './Score';
 // import './Question.scss';
 
-export default function Question({questions}) {
+export default function Question({questions, setQuestions}) {
   const { currentQ, results } = useStateContext()
 
   return (
@@ -22,7 +22,7 @@ export default function Question({questions}) {
         </div>
       }
       {currentQ === 10 &&
-        <Score/>
+        <Score setQuestions={setQuestions}/>
       }
     </>
   )

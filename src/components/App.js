@@ -24,7 +24,7 @@ export default function App() {
         </div>
       }
       {!splashPage &&
-        <Question questions={questionsArr}/>
+        <Question questions={questionsArr} setQuestions={setQuestionsArr}/>
       }
       </Provider>
     </div>

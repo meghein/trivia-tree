@@ -1,14 +1,18 @@
 const ACTION = {
+  SET_QUIZ: 'quiz',
   ANSWERS_KEY: 'answersKey',
   CURRENT_Q: 'currentQ',
   RESULTS: 'results',
   SCORE: 'score',
+  RESET: 'reset',
 }
 
 export { ACTION }
 
 export default function reducer(state, action) {
   switch(action.type) {
+    case ACTION.SET_QUIZ:
+      return({...state, quiz: action.payload})
     case ACTION.ANSWERS_KEY:
       return({...state, answersKey: action.payload})
     case ACTION.CURRENT_Q:
@@ -22,6 +26,14 @@ export default function reducer(state, action) {
       tempScore += action.payload
       console.log(state)
       return({...state, score: tempScore})
+    case ACTION.RESET:
+      return({
+        ...state,
+        answersKey: {},
+        currentQ: 0,
+        results: 'pending',
+        score: 0,
+      })
     default:
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`
