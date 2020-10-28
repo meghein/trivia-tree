@@ -11,7 +11,7 @@ export default function Question({questions}) {
 
   return (
     <>
-      {currentQ >= 9 &&
+      {currentQ <= 9 &&
         <div className='quiz'>
         <h2 className='q-title'>{questions[currentQ].question}</h2>
         {results === 'pending' &&
