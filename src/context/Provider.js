@@ -15,7 +15,7 @@ export default function Provider({children}) {
     answersKey: {},
     currentQ: 0,
     results: 'pending',
-    score: null,
+    score: 0,
 
   })
   return (
