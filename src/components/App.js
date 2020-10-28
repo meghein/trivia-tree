@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { generateRandomArr } from 'helpers/generators';
 import Provider from 'context/Provider';
 import questions from 'data/questions.json';
-import QuestionsMap from './QuestionsMap'
+import Question from './Question'
 import './App.scss';
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
         </div>
       }
       {!splashPage &&
-        <QuestionsMap questions={questionsArr}/>
+        <Question questions={questionsArr}/>
       }
       </Provider>
     </div>

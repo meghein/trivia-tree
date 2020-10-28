@@ -12,6 +12,7 @@ export function useDispatchContext() {
 }
 export default function Provider({children}) {
   const [state, dispatch] = useReducer(reducer, {
+    answersKey: {},
     currentQ: 0,
     results: 'pending',
     score: null,
