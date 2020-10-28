@@ -7,6 +7,10 @@ import { generateRandomAnswers, generateAnswersKey } from 'helpers/generators';
 export default function Answers({question}) {
   const dispatch = useDispatchContext()
 
+  const answers = generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{
+    return <button key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
+  })
+
   function validate(e) {
     const answers = generateAnswersKey(question.correct, question.incorrect);
     dispatch({type: ACTION.ANSWERS_KEY, payload: answers})
@@ -15,9 +19,6 @@ export default function Answers({question}) {
     : dispatch({type: ACTION.RESULTS, payload: 'incorrect'});
   }
 
-  const answers = generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{
-    return <button key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
-  })
   return (
     <div>
       {answers}
