@@ -10,6 +10,8 @@
   width: 600px;
   padding: 2em;
   background-color: #7C9885;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+  border: 10px solid #B5B682;
   border-radius: 50px;
 
   h2 {
@@ -18,4 +20,8 @@
     width: 80%;
     margin: auto;
   }
+}
+
+#quiz:hover{
+  box-shadow: 10px 10px 5px #033F639f;
 }
