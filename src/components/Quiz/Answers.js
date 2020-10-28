@@ -8,7 +8,7 @@ export default function Answers({question}) {
   const dispatch = useDispatchContext();
 
   const answers = generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{
-    return <button key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
+    return <div className={`answer a${index+1}`} key={`answer${index}`} onClick={validate} value={answer}>{answer}</div>
   });
 
   function validate(e) {
@@ -20,8 +20,8 @@ export default function Answers({question}) {
   };
 
   return (
-    <div>
+    <>
       {answers}
-    </div>
+    </>
   )
 };
