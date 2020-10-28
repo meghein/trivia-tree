@@ -9,20 +9,20 @@
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5em;
     cursor: pointer;
-    color: #264653;
-    background-color: #F4A261;
+    color: #28666E;
+    background-color: #B5B682;
     border-radius: 50px;
     border-style: none;
-    :hover{
-      box-shadow: 5px 5px 5px #2646539f;
-      }
   }
-  :hover > .answer {
+}
+.answer:hover{
+  box-shadow: 5px 5px 5px #28666E9f;
+}
+.choices:hover > .answer {
   opacity: 0.8;
-  }
-  :hover > .answer:hover {
-  opacity: 1.0;
-  }
+}
+.choices:hover > .answer:hover {
+opacity: 1.0;
 }
 
 .results {
