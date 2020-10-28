@@ -15,10 +15,11 @@ export default function Score({setQuestions}) {
   }
 
   return (
-    <div>
+    <div id='score'>
+      <div className='stats'></div>
       <h1>Your score:</h1>
       <h2>{score}/10</h2>
-      <button onClick={resetQuiz}>play again?</button>
+      <button className='play-again' onClick={resetQuiz}>play again?</button>
     </div>
   )
 }

@@ -1,0 +1,41 @@
+#score {
+  text-align: center;
+  height: 600px;
+  width: 600px;
+  padding: 2em;
+  background-color: #7C9885;
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  border: 10px solid #B5B682;
+  border-radius: 50px;
+  color: #033F63;
+
+  h1 {
+    padding-top: 1em;
+    font-size: 4.5em;
+  }
+  h2 {
+    font-size: 4em;
+    color: #9d0208;
+  }
+  .play-again {
+    background-color: #B5B682;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 50px;
+    border: 2px solid #B5B682; 
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    color: #28666E;
+    cursor: pointer;
+  }
+}
+
+#score:hover{
+  box-shadow: 10px 10px 5px #033F639f;
+}
+.play-again:hover{
+  box-shadow: 5px 5px 5px #033F639f;
+}
+
