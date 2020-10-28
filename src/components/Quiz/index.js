@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStateContext } from 'context/Provider';
-import Answers from './Answers';
-import Correct from './Correct';
-import Incorrect from './Incorrect';
+import Answers from './Answers/Answers';
+import Correct from './Answers/Correct';
+import Incorrect from './Answers/Incorrect';
 import ProgressBar from './ProgressBar';
 import Score from './Score';
 import './style.scss';
@@ -14,7 +14,6 @@ export default function Quiz({questions, setQuestions}) {
     <>
       {currentQ <= 9 &&
         <div id='quiz'>
-        {/* <h2>Question {currentQ + 1}:</h2> */}
         <h2 className='q-title'>{questions[currentQ].question}</h2>
         {results === 'pending' &&
           <Answers question={questions[currentQ]}/>

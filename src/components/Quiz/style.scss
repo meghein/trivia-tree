@@ -1,29 +1,31 @@
 #quiz {
   display: grid;
   grid-template:
-    [row1-start] 'question question' 1fr [row1-end]
-    [row2-start] 'answer answer' 2fr [row2-end]
-    [row3-start] 'answer answer' 2fr [row3-end]
-    [row4-start] 'progress progress' 1fr [row4-end]
-    / 1fr 1fr;
-  gap: 1em;
+  [row1-start] 'question' 1fr [row1-end]
+  [row2-start] 'main' 3fr [row2-end]
+  [row3-start] 'progress' 1fr [row3-end]
+  / 1fr;
   text-align: center;
   height: 600px;
   width: 600px;
   padding: 2em;
-  // border: 1px solid red;
   background-color: #2A9D8F;
   border-radius: 50px;
-  .answer:hover{
-    box-shadow: 5px 5px 5px #2646539f;
-  }
-  
 
   h2 {
     grid-area: question;
     color: #E9C46A;
     width: 80%;
     margin: auto;
+  }
+
+  .choices {
+    display: grid;
+    grid-template:
+    [row1-start] 'a1 a2' 1fr [row1-end]
+    [row2-start] 'a3 a3' 1fr [row2-end]
+    / 1fr 1fr;
+    gap: 1em;
   }
 
   .answer {
@@ -40,9 +42,13 @@
   }
 }
 
-#quiz:hover > .answer {
+.answer:hover{
+  box-shadow: 5px 5px 5px #2646539f;
+}
+
+.choices:hover > .answer {
   opacity: 0.8;
 }
-#quiz:hover > .answer:hover {
+.choices:hover > .answer:hover {
   opacity: 1.0;
 }

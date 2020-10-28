@@ -21,8 +21,8 @@ export default function Answers({question}) {
   };
 
   return (
-    <>
+    <div className='choices'>
       {answers}
-    </>
+    </div>
   )
 };
