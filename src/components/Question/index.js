@@ -5,9 +5,9 @@ import Correct from './Correct';
 import Incorrect from './Incorrect';
 import ProgressBar from './ProgressBar';
 import Score from './Score';
-// import './Question.scss';
+// import './Quiz.scss';
 
-export default function Question({questions, setQuestions}) {
+export default function Quiz({questions, setQuestions}) {
   const { currentQ, results } = useStateContext()
 
   return (
