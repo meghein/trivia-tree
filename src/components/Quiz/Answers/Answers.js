@@ -2,7 +2,7 @@ import React from 'react';
 import { ACTION } from 'reducer/reducer';
 import { useDispatchContext } from 'context/Provider';
 import { generateRandomAnswers, generateAnswersKey } from 'helpers/generators';
-
+import './style.scss';
 
 export default function Answers({question}) {
   const dispatch = useDispatchContext();

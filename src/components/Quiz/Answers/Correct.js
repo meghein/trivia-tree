@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStateContext, useDispatchContext } from 'context/Provider';
-import { ACTION } from 'reducer/reducer'
+import { ACTION } from 'reducer/reducer';
+import './style.scss';
 
 export default function Correct() {
   const { currentQ } = useStateContext();

@@ -18,37 +18,4 @@
     width: 80%;
     margin: auto;
   }
-
-  .choices {
-    display: grid;
-    grid-template:
-    [row1-start] 'a1 a2' 1fr [row1-end]
-    [row2-start] 'a3 a3' 1fr [row2-end]
-    / 1fr 1fr;
-    gap: 1em;
-  }
-
-  .answer {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5em;
-    cursor: pointer;
-    color: #264653;
-    background-color: #F4A261;
-    border-radius: 50px;
-    border-style: none;
-  }
-  .results {
-    grid-area: answer
-  }
-}
-
-.answer:hover{
-  box-shadow: 5px 5px 5px #2646539f;
-}
-
-.choices:hover > .answer {
-  opacity: 0.8;
-}
-.choices:hover > .answer:hover {
-  opacity: 1.0;
 }
