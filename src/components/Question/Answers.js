@@ -1,11 +1,10 @@
 import React from 'react';
 import { ACTION } from 'reducer/reducer';
-import { useStateContext, useDispatchContext } from 'context/Provider'
+import { useDispatchContext } from 'context/Provider'
 import { generateRandomAnswers, generateAnswersKey } from 'helpers/generators';
 
 
 export default function Answers({question}) {
-  const {results, answersKey} = useStateContext()
   const dispatch = useDispatchContext()
 
   function validate(e) {
