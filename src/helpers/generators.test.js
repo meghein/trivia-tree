@@ -1,4 +1,11 @@
-import { generateAnswersKey, generateCorrect, generateIncorrect, generateRandomAnswers, generateRandomArr} from './generators';
+import {
+  generateAnswersKey,
+  generateCorrect,
+  generateIncorrect,
+  generateRandomAnswers,
+  generateRandomArr
+} from './generators';
+
 import questions from 'data/questions.json';
 
 /* 
@@ -9,19 +16,20 @@ const question = {
   'correct': 'Devmynd'
 }
 */
-const choices = ['Tandem', 'Burger Shack', 'Extraordinary Humans', 'Devmynd']
-const correctChoice = 'Devmynd'
-const incorrectChoice = 'Burger Shack'
+
+const choices = ['Tandem', 'Burger Shack', 'Extraordinary Humans', 'Devmynd'];
+const correctChoice = 'Devmynd';
+const incorrectChoice = 'Burger Shack';
 const answers = {
   'Tandem': false,
   'Burger Shack': false,
   'Extraordinary Humans': false,
   'Devmynd': true
-}
+};
 
 test('generateAnswersKey should return an object', () => {
   const result = generateAnswersKey(questions[0].correct, questions[0].incorrect);
-  expect(result).toBeInstanceOf(Object)
+  expect(result).toBeInstanceOf(Object);
 });
 
 test('generateAnswersKey should contain the correct and incorrect answers as keys', () => {
@@ -37,44 +45,44 @@ test('generateAnswersKey should contain true/false as values', () => {
 });
 
 test('generateCorrect should return an array', () => {
-  const result = generateCorrect(choices, answers, correctChoice)
-  expect(result).toBeInstanceOf(Array)
-})
+  const result = generateCorrect(choices, answers, correctChoice);
+  expect(result).toBeInstanceOf(Array);
+});
 
 test('generateCorrect should return a "correct" button', () => {
-  const result = generateCorrect(choices, answers, correctChoice)
-  const correct = (<button key='3' className='option opt4' style={{backgroundColor: '#6A994E'}}>Devmynd</button>)
+  const result = generateCorrect(choices, answers, correctChoice);
+  const correct = (<button key='3' className='option opt4' style={{backgroundColor: '#6A994E'}}>Devmynd</button>);
 
-  expect(result[3]).toMatchObject(correct)
-})
+  expect(result[3]).toMatchObject(correct);
+});
 
 test('generateIncorrect should return an array', () => {
-  const result = generateIncorrect(choices, answers, correctChoice)
-  expect(result).toBeInstanceOf(Array)
-})
+  const result = generateIncorrect(choices, answers, correctChoice);
+  expect(result).toBeInstanceOf(Array);
+});
 
 test('generateIncorrect should return a "incorrect" button', () => {
-  const result = generateIncorrect(choices, answers, incorrectChoice)
-  const incorrect = (<button key='1' className='option opt2' style={{backgroundColor: '#DD6E429D'}}>Burger Shack</button>)
+  const result = generateIncorrect(choices, answers, incorrectChoice);
+  const incorrect = (<button key='1' className='option opt2' style={{backgroundColor: '#DD6E429D'}}>Burger Shack</button>);
 
-  expect(result[1]).toMatchObject(incorrect)
-})
+  expect(result[1]).toMatchObject(incorrect);
+});
 
 test('generateIncorrect should return a "correct" button', () => {
-  const result = generateIncorrect(choices, answers, incorrectChoice)
-  const correct = (<button key='3' className='option opt4' style={{backgroundColor: '#6A994E'}}>Devmynd</button>)
+  const result = generateIncorrect(choices, answers, incorrectChoice);
+  const correct = (<button key='3' className='option opt4' style={{backgroundColor: '#6A994E'}}>Devmynd</button>);
 
-  expect(result[3]).toMatchObject(correct)
-})
+  expect(result[3]).toMatchObject(correct);
+});
 
 test('generateRandomAnswers should return an array with a length of 4', () => {
   const result = generateRandomAnswers(questions[0].correct, questions[0].incorrect);
-  expect(result).toBeInstanceOf(Array)
-  expect(result).toHaveLength(4)
+  expect(result).toBeInstanceOf(Array);
+  expect(result).toHaveLength(4);
 });
 
 test('generateRandomArr should return an array with a length of 10', () => {
   const result = generateRandomArr(questions, 10);
-  expect(result).toBeInstanceOf(Array)
-  expect(result).toHaveLength(10)
+  expect(result).toBeInstanceOf(Array);
+  expect(result).toHaveLength(10);
 });
