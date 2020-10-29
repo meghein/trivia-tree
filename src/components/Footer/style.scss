@@ -1,6 +1,26 @@
 footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
+  width: 95%;
   bottom: 0;
-  margin-bottom: 1em;
-  // font-size: 2em;
+  margin-bottom: .5em;
+  color: #B5B682;
+  a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+  .links {
+    font-size: 1.8em;
+    a{
+      padding-left: .5em;
+    }
+  }
+  .links:hover > a {
+    opacity: 0.5;
+  }
+  .links:hover > a:hover {
+  opacity: 1.0;
+  }
 }
