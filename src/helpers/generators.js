@@ -50,6 +50,7 @@ export function generateCorrect(options, answers, choice) {
 export function generateIncorrect(options, answers, choice) {
   const results = []
   options.map((option, index) => {
+    console.log('answers[opt]:', answers[option])
     if (option === choice && !answers[choice]) {
       results.push(
         <li
@@ -60,7 +61,7 @@ export function generateIncorrect(options, answers, choice) {
           {option}
         </li>
       )
-    } else if (option === answers[option] && answers[option]) {
+    } else if (answers[option]) {
       results.push(
         <li
           key={index}
