@@ -21,6 +21,12 @@
   &:hover > .answer:hover {
   opacity: 1.0;
   }
+  @media (max-width: 650px) {
+    gap: .8em;
+  }
+  @media (max-width: 500px) {
+    font-size: .4em;
+  }
 }
 .results {
   grid-area: choices;
@@ -28,7 +34,7 @@
   grid-template:
   [row1-start] 'a1 a2' 1fr [row1-end]
   [row2-start] 'results results' 60px [row2-end]
-  [row2-start] 'a3 a4' 1fr [row2-end]
+  [row3-start] 'a3 a4' 1fr [row3-end]
   / 1fr 1fr;
   gap: 1em;
   .option {
@@ -49,5 +55,15 @@
       color: $sage;
     }
   }
+  @media (max-width: 650px) {
+    grid-template:
+    [row1-start] 'a1 a2' 1fr [row1-end]
+    [row2-start] 'results results' 35px [row2-end]
+    [row2-start] 'a3 a4' 1fr [row2-end]
+    / 1fr 1fr;
+    gap: .8em;
+  }
+  @media (max-width: 500px) {
+    font-size: .4em;
+  }
 }
-

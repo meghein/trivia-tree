@@ -2,7 +2,7 @@
 
 #score {
   text-align: center;
-  height: 500px;
+  height: 450px;
   width: 500px;
   padding: 2em;
   background-color: $morning-blue;
@@ -22,5 +22,25 @@
   }
   .play-again {
     font-size: 2em;
+  }
+  @media (max-width: 650px) {
+    width: 500px;
+    height: 400px;
+    h1 {
+      font-size: 3.5em;
+    }
+  }
+  @media (max-width: 500px) {
+    width: 250px;
+    height: 250px;
+    h1 {
+      font-size: 2.5em;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    .play-again {
+      font-size: 1.5em;
+    }
   }
 }

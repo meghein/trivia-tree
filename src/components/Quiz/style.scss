@@ -24,4 +24,25 @@
     color: $indigo;
     font-size: 1.8em;
   }
+  @media (max-width: 650px) {
+    width: 500px;
+    h2 {
+      font-size: 1.4em;
+      padding-bottom: .5em;
+    }
+  }
+  @media (max-width: 500px) {
+    width: 250px;
+    height: 250px;
+    padding: 2em;
+    padding-top: 1em;
+    grid-template:
+      [row1-start] 'question' 80px [row1-end]
+      [row2-start] 'choices' auto [row2-end]
+      [row3-start] 'progress' 30px [row3-end]
+      / 1fr;
+      h2 {
+        font-size: .8em;
+      }
+  }
 }

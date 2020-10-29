@@ -23,5 +23,10 @@ body {
     &:hover{
       box-shadow: 10px 10px 10px $shadow;
     }
+    @media (max-width: 650px) {
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 }

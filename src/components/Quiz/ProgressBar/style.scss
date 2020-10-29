@@ -17,4 +17,8 @@
     border-radius: inherit;
     transition: width .2s ease-in;
   }
+  @media (max-width: 650px) {
+    max-height: 10px;
+    font-size: .5em;
+  }
 }
