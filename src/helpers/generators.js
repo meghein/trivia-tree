@@ -59,6 +59,16 @@ export function generateIncorrect(options, answers, choice) {
           {option}
         </li>
       )
+    } else if (option === answers[option] && answers[option]) {
+      results.push(
+        <li
+          key={index}
+          className={`opt${index +1}`}
+          style={{backgroundColor: 'green'}}
+        >
+          {option}
+        </li>
+      )
     } else {
       results.push(<li key={index} className={`opt${index +1}`}>{option}</li>)
     }
