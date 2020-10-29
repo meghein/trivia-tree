@@ -7,13 +7,16 @@ import Footer from './Footer';
 import './App.scss';
 
 export default function App() {
-  const [splashPage, setSplashPage] = useState(true)
-  const [questionsArr, setQuestionsArr] = useState([])
+  const [splashPage, setSplashPage] = useState(true);
+  const [questionsArr, setQuestionsArr] = useState([]);
 
   function handleSplash() {
+    // toggle splash-page/quiz components:
     splashPage ? setSplashPage(false) : setSplashPage(true);
+
+    // create round of 10 question from data store:
     setQuestionsArr(generateRandomArr(questions, 10));
-  }
+  };
 
   return (
     <div className="App">
