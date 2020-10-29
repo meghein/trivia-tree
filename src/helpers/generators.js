@@ -57,7 +57,7 @@ export function generateIncorrect(options, answers, choice) {
         <button
           key={index}
           className={`option opt${index+1}`}
-          style={{backgroundColor: '#dd6e429d'}}
+          style={{backgroundColor: '#DD6E429D'}}
         >
           {option}
         </button>
