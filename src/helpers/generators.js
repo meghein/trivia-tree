@@ -26,3 +26,44 @@ export function generateAnswersKey(correct, incorrect) {
   }
   return answersObj
 }
+
+export function generateCorrect(options, answers, choice) {
+  const results = []
+  options.map((option, index) => {
+    if (option === choice && answers[choice]) {
+      results.push(
+        <li
+          key={index}
+          className={`opt${index +1}`}
+          style={{backgroundColor: 'green'}}
+        >
+          {option}
+        </li>
+      )
+    } else {
+      results.push(<li key={index} className={`opt${index +1}`}>{option}</li>)
+    }
+  })
+}
+
+export function generateIncorrect(options, answers, choice) {
+  const results = []
+  options.map((option, index) => {
+    if (option === choice && !answers[choice]) {
+      results.push(
+        <li
+          key={index}
+          className={`opt${index +1}`}
+          style={{backgroundColor: 'red'}}
+        >
+          {option}
+        </li>
+      )
+    } else {
+      results.push(<li key={index} className={`opt${index +1}`}>{option}</li>)
+    }
+  })
+}
+
+
+

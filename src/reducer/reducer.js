@@ -2,6 +2,7 @@ const ACTION = {
   SET_QUIZ: 'quiz',
   ANSWERS_KEY: 'answersKey',
   CURRENT_Q: 'currentQ',
+  CHOICE: 'choice',
   RESULTS: 'results',
   SCORE: 'score',
   RESET: 'reset',
@@ -19,6 +20,8 @@ export default function reducer(state, action) {
       let tempCurrent = state.currentQ
       tempCurrent += action.payload
       return({...state, currentQ: tempCurrent})
+    case ACTION.CHOICE:
+      return({...state, resultsKey: action.answers, choice: action.choice})
     case ACTION.RESULTS:
       return({...state, results: action.payload})
     case ACTION.SCORE:

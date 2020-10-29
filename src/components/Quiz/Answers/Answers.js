@@ -6,15 +6,17 @@ import './style.scss';
 
 export default function Answers({question}) {
   const dispatch = useDispatchContext();
+  const choices = []
 
   const answers = generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{
+    choices.push(answer);
     return <button className={`answer a${index+1}`} key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
   });
 
   function validate(e) {
     const answersKey = generateAnswersKey(question.correct, question.incorrect);
-    console.log(e.target)
     dispatch({type: ACTION.ANSWERS_KEY, payload: answersKey})
+    dispatch({type: ACTION.CHOICE, choice: e.target.value, answers: choices})
     answersKey[e.target.value] === true 
     ? dispatch({type: ACTION.RESULTS, payload: 'correct'})
     : dispatch({type: ACTION.RESULTS, payload: 'incorrect'});
