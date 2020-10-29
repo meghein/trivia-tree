@@ -44,6 +44,7 @@ export function generateCorrect(options, answers, choice) {
       results.push(<li key={index} className={`opt${index +1}`}>{option}</li>)
     }
   })
+  return results;
 }
 
 export function generateIncorrect(options, answers, choice) {
@@ -73,6 +74,7 @@ export function generateIncorrect(options, answers, choice) {
       results.push(<li key={index} className={`opt${index +1}`}>{option}</li>)
     }
   })
+  return results;
 }
 
 
