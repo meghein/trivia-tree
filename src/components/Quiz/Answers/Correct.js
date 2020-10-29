@@ -5,7 +5,7 @@ import { generateCorrect } from 'helpers/generators';
 import './style.scss';
 
 export default function Correct() {
-  const { currentQ, resultsKey, answersKey, choice } = useStateContext();
+  const { currentQ, options, answersKey, choice } = useStateContext();
   const dispatch = useDispatchContext();
 
   function handleNext() {
@@ -14,7 +14,7 @@ export default function Correct() {
     dispatch({type: ACTION.RESULTS, payload: 'pending'})
   };
 
-  const results = generateCorrect(resultsKey, answersKey, choice).map(option => {
+  const results = generateCorrect(options, answersKey, choice).map(option => {
     return option;
   })
 

@@ -6,7 +6,7 @@ import './style.scss';
 
 export default function Incorrect() {
   const dispatch = useDispatchContext();
-  const { answersKey, currentQ, resultsKey, choice } = useStateContext();
+  const { answersKey, currentQ, options, choice } = useStateContext();
 
   function handleNext() {
     dispatch({type: ACTION.CURRENT_Q, payload: 1})
@@ -14,7 +14,7 @@ export default function Incorrect() {
     dispatch({type: ACTION.RESULTS, payload: 'pending'})
   };
 
-  const results = generateIncorrect(resultsKey, answersKey, choice).map(option => {
+  const results = generateIncorrect(options, answersKey, choice).map(option => {
     return option;
   });
 

@@ -21,7 +21,7 @@ export default function reducer(state, action) {
       tempCurrent += action.payload
       return({...state, currentQ: tempCurrent})
     case ACTION.CHOICE:
-      return({...state, resultsKey: action.answers, choice: action.choice})
+      return({...state, options: action.answers, choice: action.choice})
     case ACTION.RESULTS:
       return({...state, results: action.payload})
     case ACTION.SCORE:
