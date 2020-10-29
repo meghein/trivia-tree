@@ -19,15 +19,21 @@ export default function Correct() {
   })
 
   return (
-    <div className='results'>
-      <h1>CORRECT!</h1>
-      <ul>{results}</ul>
+    <>
+      <div className='results'>{results}</div>
       {currentQ <= 8 &&
-        <button onClick={handleNext}>Ready for the next question?</button>
+        <div className='next'>
+          <h1>CORRECT!</h1>
+          <button onClick={handleNext}>Ready for the next question?</button>
+        </div>
       }
       {currentQ === 9 &&
-        <button onClick={handleNext}>View Score!</button>
+        <div className='next'>
+          <h1>CORRECT!</h1>
+          <button onClick={handleNext}>View score!</button>
+        </div>
       }
-    </div>
+    </>
+
   )
 };

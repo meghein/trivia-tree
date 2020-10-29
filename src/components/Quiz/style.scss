@@ -2,8 +2,9 @@
   display: grid;
   grid-template:
   [row1-start] 'question' 1fr [row1-end]
-  [row2-start] 'main' 3fr [row2-end]
-  [row3-start] 'progress' 1fr [row3-end]
+  [row2-start] 'choices' 3fr [row2-end]
+  [row3-start] 'next' 80px [row3-end]
+  [row4-start] 'progress' 50px [row4-end]
   / 1fr;
   text-align: center;
   height: 600px;
