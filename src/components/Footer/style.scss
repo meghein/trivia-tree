@@ -16,11 +16,11 @@ footer {
     a {
       padding-left: .5em;
     }
-  }
-  .links:hover > a {
-    opacity: 0.5;
-  }
-  .links:hover > a:hover {
-  opacity: 1.0;
+    &:hover > a {
+      opacity: 0.5;
+    }
+    &:hover > a:hover {
+    opacity: 1.0;
+    }
   }
 }

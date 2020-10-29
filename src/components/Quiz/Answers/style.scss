@@ -1,4 +1,5 @@
 @import "variables";
+
 .choices {
   grid-area: choices;
   display: grid;
@@ -8,66 +9,44 @@
   / 1fr 1fr;
   gap: 1em;
   .answer {
-    font-family: $button-font;
     font-weight: 700;
     font-size: 1.5em;
-    cursor: pointer;
-    color: $teal;
-    background-color: $sage;
-    
-    border-style: none;
+    &:hover{
+      box-shadow: 5px 5px 5px #28666E9F;
+    }
+  }
+  &:hover > .answer {
+    opacity: 0.6;
+  }
+  &:hover > .answer:hover {
+  opacity: 1.0;
   }
 }
-.answer:hover{
-  box-shadow: 5px 5px 5px #28666E9F;
-}
-.choices:hover > .answer {
-  opacity: 0.8;
-}
-.choices:hover > .answer:hover {
-opacity: 1.0;
-}
-
 .results {
   grid-area: choices;
   display: grid;
   grid-template:
   [row1-start] 'a1 a2' 1fr [row1-end]
-  [row2-start] 'results results' 50px [row2-end]
+  [row2-start] 'results results' 60px [row2-end]
   [row2-start] 'a3 a4' 1fr [row2-end]
   / 1fr 1fr;
   gap: 1em;
   .option {
-    font-family: $button-font;
-    font-weight: 700;
     font-size: 1.5em;
-    color: $teal;
-    background-color: $sage;
-    
-    border-style: none;
-  }
-  .option:focus {
-    outline: none;
-    box-shadow: none;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    &:hover {
+      box-shadow: none;
+    }
   }
   .next {
     grid-area: results;
-    display: flex;
-    justify-content: space-evenly;
     button {
       background-color: $teal;
-      padding-left: 30px;
-      padding-right: 30px;
-      
-      border-style: none; 
-      font-family: $button-font;
-      font-weight: 700;
-      font-size: 1.2em;
+      font-size: 1em;
       color: $sage;
-      cursor: pointer;
-    }
-    button:hover{
-      box-shadow: 5px 5px 5px $shadow;
     }
   }
 }
