@@ -10,12 +10,12 @@ export function generateRandomArr(arr, newLength) {
 
 // Creates a randomly ordered array of answers:
 export function generateRandomAnswers(correct, incorrect) {
-  const answersArr = [correct]
+  const answersArr = [correct];
   for (const answer of incorrect) {
-    answersArr.push(answer)
+    answersArr.push(answer);
   }
-  return generateRandomArr(answersArr, answersArr.length)
-}
+  return generateRandomArr(answersArr, answersArr.length);
+};
 
 // Creates an answers object that holds booleans for each answer:
 export function generateAnswersKey(correct, incorrect) {
@@ -24,14 +24,15 @@ export function generateAnswersKey(correct, incorrect) {
   for (const wrong of incorrect) {
     answersObj[wrong] = false;
   }
-  return answersObj
-}
+  return answersObj;
+};
 
+// Creates an array with the choices in the same order as before
+// and the correct answer highlighted in green:
 export function generateCorrect(options, answers, choice) {
-  const results = []
-  options.map((option, index) => {
+  const correctArr = options.map((option, index) => {
     if (option === choice && answers[choice]) {
-      results.push(
+      return(
         <button
           key={index}
           className={`option opt${index+1}`}
@@ -39,19 +40,20 @@ export function generateCorrect(options, answers, choice) {
         >
           {option}
         </button>
-      )
+      );
     } else {
-      results.push(<button key={index} className={`option opt${index+1}`}>{option}</button>)
+      return(<button key={index} className={`option opt${index+1}`}>{option}</button>);
     }
   })
-  return results;
-}
+  return correctArr;
+};
 
+// Creates an array with the choices in the same order as before
+// and the user's choice highlighted in red and the correct answer highlighted in green:
 export function generateIncorrect(options, answers, choice) {
-  const results = []
-  options.map((option, index) => {
+  const incorrectArr = options.map((option, index) => {
     if (option === choice && !answers[choice]) {
-      results.push(
+      return(
         <button
           key={index}
           className={`option opt${index+1}`}
@@ -59,9 +61,9 @@ export function generateIncorrect(options, answers, choice) {
         >
           {option}
         </button>
-      )
+      );
     } else if (answers[option]) {
-      results.push(
+      return(
         <button
           key={index}
           className={`option opt${index+1}`}
@@ -69,13 +71,13 @@ export function generateIncorrect(options, answers, choice) {
         >
           {option}
         </button>
-      )
+      );
     } else {
-      results.push(<button key={index} className={`option opt${index+1}`}>{option}</button>)
+      return(<button key={index} className={`option opt${index+1}`}>{option}</button>);
     }
   })
-  return results;
-}
+  return incorrectArr;
+};
 
 
 

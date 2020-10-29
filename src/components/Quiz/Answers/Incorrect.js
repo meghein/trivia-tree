@@ -8,8 +8,6 @@ export default function Incorrect() {
   const dispatch = useDispatchContext();
   const { answersKey, currentQ, resultsKey, choice } = useStateContext();
 
-  const correctAnswer = Object.keys(answersKey).find(key => answersKey[key] === true);
-
   function handleNext() {
     dispatch({type: ACTION.CURRENT_Q, payload: 1})
     dispatch({type: ACTION.SCORE, payload: 0})
@@ -18,7 +16,7 @@ export default function Incorrect() {
 
   const results = generateIncorrect(resultsKey, answersKey, choice).map(option => {
     return option;
-  })
+  });
 
   return (
     <div className='results'>
@@ -34,5 +32,5 @@ export default function Incorrect() {
         </div>
       }
     </div>
-  )
+  );
 };
