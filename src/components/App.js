@@ -18,9 +18,9 @@ export default function App() {
     <div className="App">
       <Provider>
       {splashPage && 
-        <div>
-          <h1>Ready to test your Tandem smarts??</h1>
-          <button onClick={handleSplash}>Click here get quizzy!</button>
+        <div className='splash-page'>
+          <h1>Ready to Take the Tandem Test??</h1>
+          <button onClick={handleSplash}>Click here to flex your smarts!</button>
         </div>
       }
       {!splashPage &&

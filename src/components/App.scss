@@ -1,9 +1,34 @@
 .App {
   display: flex;
   justify-content: center;
-  padding-top: 5%;
+  align-items: center;
   min-height: 100vh;
   min-width: 100vw;
   background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png"), linear-gradient(#033F63, #28666E);
 
+  .splash-page {
+    text-align: center;
+    max-width: 80%;
+    h1 {
+      color: #B5B682;
+      margin-bottom: 50px;
+      font-size: 3em;
+    }
+    button {
+      background-color: #B5B682;
+      padding: 20px;
+      padding-left: 30px;
+      padding-right: 30px;
+      border-radius: 50px;
+      border: 2px solid #B5B682; 
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 700;
+      font-size: 2em;
+      color: #28666E;
+      cursor: pointer;
+    }
+    button:hover{
+      box-shadow: 10px 10px 10px #033F639f;
+    }
+  }
 }
