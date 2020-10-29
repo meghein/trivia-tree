@@ -1,17 +1,10 @@
 {
-  "name": "tandem-quiz-app",
+  "name": "tandem-code-challenge",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-regular-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.12",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "node-sass": "^4.14.1",
+    "classnames": "^2.2.6",
+    "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
@@ -21,13 +14,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "coverage": "yarn test -- --coverage --watchAll=false"
   },
   "browserslist": {
     "production": [
@@ -39,6 +27,31 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/react": "^8.0.7",
+    "@testing-library/react-hooks": "^3.3.0",
+    "@testing-library/user-event": "^12.1.10",
+    "babel-loader": "^8.0.5",
+    "node-sass": "^4.11.0",
+    "react-test-renderer": "^16.9.0"
+  },
+  "jest": {
+    "watchPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/.git/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
     ]
   }
 }
