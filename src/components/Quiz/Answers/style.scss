@@ -1,3 +1,4 @@
+@import "variables";
 .choices {
   grid-area: choices;
   display: grid;
@@ -11,14 +12,14 @@
     font-weight: 700;
     font-size: 1.5em;
     cursor: pointer;
-    color: #28666E;
-    background-color: #B5B682;
+    color: $teal;
+    background-color: $sage;
     border-radius: 50px;
     border-style: none;
   }
 }
 .answer:hover{
-  box-shadow: 5px 5px 5px #28666E9f;
+  box-shadow: 5px 5px 5px #28666E9F;
 }
 .choices:hover > .answer {
   opacity: 0.8;
@@ -40,8 +41,8 @@ opacity: 1.0;
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
-    color: #28666E;
-    background-color: #B5B682;
+    color: $teal;
+    background-color: $sage;
     border-radius: 50px;
     border-style: none;
   }
@@ -54,7 +55,7 @@ opacity: 1.0;
     display: flex;
     justify-content: space-evenly;
     button {
-      background-color: #28666E;
+      background-color: $teal;
       padding-left: 30px;
       padding-right: 30px;
       border-radius: 50px;
@@ -62,11 +63,11 @@ opacity: 1.0;
       font-family: 'Montserrat Alternates', sans-serif;
       font-weight: 700;
       font-size: 1.2em;
-      color: #B5B682;
+      color: $sage;
       cursor: pointer;
     }
     button:hover{
-      box-shadow: 5px 5px 5px #033F639f;
+      box-shadow: 5px 5px 5px $shadow;
     }
   }
 }

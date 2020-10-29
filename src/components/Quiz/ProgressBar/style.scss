@@ -1,13 +1,14 @@
+@import "variables";
 .progress-bar {
   grid-area: progress;
   margin: auto;
   height: 20px;
   width: 350px;
-  color: #033F63;
+  color: $indigo;
   border-radius: 50px;
-  border: 1px solid #033F63;
+  border: 1px solid $indigo;
   .filler {
-    background: #033F63;
+    background: $indigo;
     height: 100%;
     border-radius: inherit;
     transition: width .2s ease-in;

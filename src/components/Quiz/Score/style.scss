@@ -1,13 +1,14 @@
+@import "variables";
 #score {
   text-align: center;
   height: 500px;
   width: 500px;
   padding: 2em;
-  background-color: #7C9885;
+  background-color: $morning-blue;
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
-  border: 10px solid #B5B682;
+  border: 10px solid $sage;
   border-radius: 50px;
-  color: #033F63;
+  color: $indigo;
 
   h1 {
     font-size: 4.5em;
@@ -17,24 +18,24 @@
     color: #9D0208;
   }
   .play-again {
-    background-color: #B5B682;
+    background-color: $sage;
     padding: 20px;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 50px;
-    border: 2px solid #B5B682; 
+    border: 2px solid $sage; 
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 700;
     font-size: 2em;
-    color: #28666E;
+    color: $teal;
     cursor: pointer;
   }
 }
 
 #score:hover{
-  box-shadow: 10px 10px 5px #033F639f;
+  box-shadow: 10px 10px 5px $shadow;
 }
 .play-again:hover{
-  box-shadow: 5px 5px 5px #033F639f;
+  box-shadow: 5px 5px 5px $shadow;
 }
 
