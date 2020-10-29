@@ -8,7 +8,7 @@
   / 1fr 1fr;
   gap: 1em;
   .answer {
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: $title-font;
     font-weight: 700;
     font-size: 1.5em;
     cursor: pointer;
@@ -38,7 +38,7 @@ opacity: 1.0;
   / 1fr 1fr;
   gap: 1em;
   .option {
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: $title-font;
     font-weight: 700;
     font-size: 1.5em;
     color: $teal;
@@ -60,7 +60,7 @@ opacity: 1.0;
       padding-right: 30px;
       border-radius: 50px;
       border-style: none; 
-      font-family: 'Montserrat Alternates', sans-serif;
+      font-family: $title-font;
       font-weight: 700;
       font-size: 1.2em;
       color: $sage;
