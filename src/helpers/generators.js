@@ -35,7 +35,7 @@ export function generateCorrect(options, answers, choice) {
         <button
           key={index}
           className={`option opt${index+1}`}
-          style={{backgroundColor: 'green'}}
+          style={{backgroundColor: '#6A994E'}}
         >
           {option}
         </button>
@@ -55,7 +55,7 @@ export function generateIncorrect(options, answers, choice) {
         <button
           key={index}
           className={`option opt${index+1}`}
-          style={{backgroundColor: 'red'}}
+          style={{backgroundColor: '#dd6e429d'}}
         >
           {option}
         </button>
@@ -65,7 +65,7 @@ export function generateIncorrect(options, answers, choice) {
         <button
           key={index}
           className={`option opt${index+1}`}
-          style={{backgroundColor: 'green'}}
+          style={{backgroundColor: '#6A994E'}}
         >
           {option}
         </button>
