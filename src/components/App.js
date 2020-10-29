@@ -22,9 +22,9 @@ export default function App() {
     <div className="App">
       <Provider>
         {splashPage && 
-          <div className='splash-page'>
+          <div className='splash-page' data-testid="splash">
             <h1>Ready to Take the Tandem Test??</h1>
-            <button onClick={handleSplash}>Click here to flex your smarts!</button>
+            <button data-testid="splash-button" onClick={handleSplash}>Click here to flex your smarts!</button>
           </div>
         }
         {!splashPage &&

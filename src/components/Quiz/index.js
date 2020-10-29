@@ -13,7 +13,7 @@ export default function Quiz({questions, setQuestions}) {
   return (
     <>
       {currentQ <= 9 &&
-        <div id='quiz'>
+        <div id='quiz' data-testid="quiz">
         <h2 className='q-title'>{questions[currentQ].question}</h2>
         {results === 'pending' &&
           <Answers question={questions[currentQ]}/>
