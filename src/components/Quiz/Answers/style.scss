@@ -36,7 +36,6 @@ opacity: 1.0;
   / 1fr 1fr;
   gap: 1em;
   .option {
-    padding-top: 70px;
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
@@ -44,6 +43,10 @@ opacity: 1.0;
     background-color: #B5B682;
     border-radius: 50px;
     border-style: none;
+  }
+  .option:focus {
+    outline: none;
+    box-shadow: none;
   }
 }
 

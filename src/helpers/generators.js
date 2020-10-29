@@ -32,16 +32,16 @@ export function generateCorrect(options, answers, choice) {
   options.map((option, index) => {
     if (option === choice && answers[choice]) {
       results.push(
-        <div
+        <button
           key={index}
           className='option'
           style={{backgroundColor: 'green'}}
         >
           {option}
-        </div>
+        </button>
       )
     } else {
-      results.push(<div key={index} className='option'>{option}</div>)
+      results.push(<button key={index} className='option'>{option}</button>)
     }
   })
   return results;
@@ -53,26 +53,26 @@ export function generateIncorrect(options, answers, choice) {
     console.log('answers[opt]:', answers[option])
     if (option === choice && !answers[choice]) {
       results.push(
-        <div
+        <button
           key={index}
           className='option'
           style={{backgroundColor: 'red'}}
         >
           {option}
-        </div>
+        </button>
       )
     } else if (answers[option]) {
       results.push(
-        <div
+        <button
           key={index}
           className='option'
           style={{backgroundColor: 'green'}}
         >
           {option}
-        </div>
+        </button>
       )
     } else {
-      results.push(<div key={index} className='option'>{option}</div>)
+      results.push(<button key={index} className='option'>{option}</button>)
     }
   })
   return results;
