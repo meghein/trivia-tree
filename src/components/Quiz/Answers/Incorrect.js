@@ -21,21 +21,18 @@ export default function Incorrect() {
   })
 
   return (
-    <>
-      <div className='results'>{results}</div>
+    <div className='results'>
+      {results}
       {currentQ <= 8 &&
         <div className='next'>
-          <h1>X</h1>
-          <button onClick={handleNext}>Ready for the next question?</button>
-          <h4>(The correct answer was: {correctAnswer})</h4>
+          <button onClick={handleNext}>Wrong! Click here to try another.</button>
         </div>
       }
       {currentQ === 9 &&
         <div className='next'>
-          <h1>X</h1>
           <button onClick={handleNext}>View score!</button>
         </div>
       }
-    </>
+    </div>
   )
 };
