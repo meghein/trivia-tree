@@ -19,8 +19,8 @@ export default function Correct() {
   })
 
   return (
-    <>
-      <div className='results'>{results}</div>
+    <div className='results'>
+      {results}
       {currentQ <= 8 &&
         <div className='next'>
           <h1>CORRECT!</h1>
@@ -33,7 +33,7 @@ export default function Correct() {
           <button onClick={handleNext}>View score!</button>
         </div>
       }
-    </>
+    </div>
 
   )
 };
