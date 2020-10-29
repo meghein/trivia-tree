@@ -1,13 +1,13 @@
 #quiz {
   display: grid;
   grid-template:
-  [row1-start] 'question' 1fr [row1-end]
-  [row2-start] 'choices' 3fr [row2-end]
+  [row1-start] 'question' 150px [row1-end]
+  [row2-start] 'choices' auto [row2-end]
   [row3-start] 'progress' 50px [row3-end]
   / 1fr;
   text-align: center;
   height: 600px;
-  width: 600px;
+  width: 800px;
   padding: 2em;
   background-color: #7C9885;
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
@@ -19,7 +19,7 @@
     color: #033F63;
     text-shadow: white;
     font-size: 2em;
-    width: 90%;
+    max-width: 85%;
     padding-bottom: 1em;
     margin: auto;
   }
