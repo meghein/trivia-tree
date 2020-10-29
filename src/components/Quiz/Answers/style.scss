@@ -8,13 +8,13 @@
   / 1fr 1fr;
   gap: 1em;
   .answer {
-    font-family: $title-font;
+    font-family: $button-font;
     font-weight: 700;
     font-size: 1.5em;
     cursor: pointer;
     color: $teal;
     background-color: $sage;
-    border-radius: 50px;
+    
     border-style: none;
   }
 }
@@ -38,12 +38,12 @@ opacity: 1.0;
   / 1fr 1fr;
   gap: 1em;
   .option {
-    font-family: $title-font;
+    font-family: $button-font;
     font-weight: 700;
     font-size: 1.5em;
     color: $teal;
     background-color: $sage;
-    border-radius: 50px;
+    
     border-style: none;
   }
   .option:focus {
@@ -58,9 +58,9 @@ opacity: 1.0;
       background-color: $teal;
       padding-left: 30px;
       padding-right: 30px;
-      border-radius: 50px;
+      
       border-style: none; 
-      font-family: $title-font;
+      font-family: $button-font;
       font-weight: 700;
       font-size: 1.2em;
       color: $sage;

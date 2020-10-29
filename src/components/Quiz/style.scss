@@ -6,7 +6,6 @@
   [row2-start] 'choices' auto [row2-end]
   [row3-start] 'progress' 50px [row3-end]
   / 1fr;
-  text-align: center;
   height: 500px;
   width: 650px;
   padding: 2em;
@@ -14,14 +13,14 @@
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
   border: 10px solid $sage;
   border-radius: 50px;
+  
 
   h2 {
     grid-area: question;
-    color: $indigo;
-    text-shadow: white;
-    font-size: 1.8em;
     padding-bottom: 1em;
     margin: auto;
+    color: $indigo;
+    font-size: 1.8em;
   }
 }
 

@@ -7,7 +7,7 @@
   background-color: $morning-blue;
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
   border: 10px solid $sage;
-  border-radius: 50px;
+  
   color: $indigo;
 
   h1 {
@@ -22,9 +22,9 @@
     padding: 20px;
     padding-left: 30px;
     padding-right: 30px;
-    border-radius: 50px;
+    
     border: 2px solid $sage; 
-    font-family: $title-font;
+    font-family: $button-font;
     font-weight: 700;
     font-size: 2em;
     color: $teal;

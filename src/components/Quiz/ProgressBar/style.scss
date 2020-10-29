@@ -2,11 +2,15 @@
 .progress-bar {
   grid-area: progress;
   margin: auto;
+  margin-top: 20px;
   height: 20px;
-  width: 350px;
+  width: 80%;
   color: $indigo;
-  border-radius: 50px;
   border: 1px solid $indigo;
+  border-radius: 50px;
+  p {
+    margin-top: 5px;
+  }
   .filler {
     background: $indigo;
     height: 100%;

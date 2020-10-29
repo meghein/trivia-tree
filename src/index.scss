@@ -2,13 +2,22 @@
 body {
   margin: 0;
   text-align: center;
-  font-family: $body-font;
-  font-size: 24px;
+  font-family: $title-font;
+  font-size: 16px;
+  color: $sage;
   h1 {
-    color: $sage;
-    font-size: 2em;
+    font-size: 3em;
   }
   button {
+    background-color: $sage;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 2px solid $sage;
+    border-radius: 50px;
+    font-family: $button-font;
+    font-weight: 700;
+    color: $teal;
     cursor: pointer;
   }
   button:hover{
