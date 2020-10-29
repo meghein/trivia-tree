@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStateContext, useDispatchContext } from 'context/Provider';
 import { ACTION } from 'reducer/reducer';
-import { generateCorrect } from 'helpers/generators'
+import { generateCorrect } from 'helpers/generators';
 import './style.scss';
 
 export default function Correct() {
