@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import QuizProvider, { QuizContext } from 'context/Provider';
 import { ACTION } from 'reducer/reducer';
-import { useDispatchContext } from 'context/Provider';
+// import { useDispatchContext } from 'context/Provider';
 import { generateRandomAnswers, generateAnswersKey } from 'helpers/generators';
 import './style.scss';
 
 export default function Answers({question}) {
-  const dispatch = useDispatchContext();
+  const { dispatch } = useContext(QuizContext);
   const choices = []
 
   const answers = generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{

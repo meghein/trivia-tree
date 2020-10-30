@@ -1,12 +1,12 @@
-import React from 'react';
-import { useStateContext, useDispatchContext } from 'context/Provider';
+import React, { useContext } from 'react';
+import QuizProvider, { QuizContext } from 'context/Provider';
 import { ACTION } from 'reducer/reducer';
 import { generateIncorrect } from 'helpers/generators';
 import './style.scss';
 
 export default function Incorrect() {
-  const dispatch = useDispatchContext();
-  const { answersKey, currentQ, options, choice } = useStateContext();
+  const { state, dispatch } = useContext(QuizContext);
+  const { currentQ, options, answersKey, choice } = state;
 
   function handleNext() {
     dispatch({type: ACTION.CURRENT_Q, payload: 1})

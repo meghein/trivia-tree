@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { generateRandomArr } from 'helpers/generators';
-import Provider from 'context/Provider';
+import QuizProvider from 'context/Provider';
 import questions from 'data/questions.json';
 import Quiz from './Quiz';
 import Footer from './Footer';
@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <Provider>
+      <QuizProvider>
         {splashPage && 
           <div className='splash-page' data-testid="splash">
             <h1>Ready to Take the Tandem Test??</h1>
@@ -31,7 +31,7 @@ export default function App() {
           <Quiz questions={questionsArr} setQuestions={setQuestionsArr}/>
         }
         <Footer/>
-      </Provider>
+      </QuizProvider>
     </div>
   );
 };

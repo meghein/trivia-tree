@@ -27,7 +27,6 @@ export default function reducer(state, action) {
     case ACTION.SCORE:
       let tempScore = state.score
       tempScore += action.payload
-      console.log(state)
       return({...state, score: tempScore})
     case ACTION.RESET:
       return({

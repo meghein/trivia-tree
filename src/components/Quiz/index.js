@@ -1,5 +1,5 @@
-import React from 'react';
-import { useStateContext } from 'context/Provider';
+import React, { useContext } from 'react';
+import { QuizContext } from 'context/Provider';
 import Answers from './Answers/Answers';
 import Correct from './Answers/Correct';
 import Incorrect from './Answers/Incorrect';
@@ -8,7 +8,8 @@ import Score from './Score';
 import './style.scss';
 
 export default function Quiz({questions, setQuestions}) {
-  const { currentQ, results } = useStateContext()
+  const { state } = useContext(QuizContext)
+  const { currentQ, results } = state
 
   return (
     <>
