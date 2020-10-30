@@ -10,6 +10,7 @@
   height: 500px;
   width: 650px;
   padding: 2em;
+  margin-top: 150px;
   background-color: $morning-blue;
   background-image: url('https://www.transparenttextures.com/patterns/60-lines.png');
   border: 10px solid $sage;
@@ -41,8 +42,12 @@
       [row2-start] 'choices' auto [row2-end]
       [row3-start] 'progress' 30px [row3-end]
       / 1fr;
-      h2 {
-        font-size: .8em;
-      }
+    h2 {
+      font-size: .8em;
+    }
   }
+  @media (min-width: 800px) {
+    margin-top: 300px;
+  }
+  
 }
