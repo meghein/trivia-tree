@@ -16,7 +16,7 @@ export default function Correct() {
 
   const results = generateCorrect(options, answersKey, choice).map(option => {
     return option;
-  })
+  });
 
   return (
     <div className='results'>
