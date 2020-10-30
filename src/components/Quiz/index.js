@@ -33,6 +33,6 @@ export default function Quiz({questions, setQuestions}) {
 }
 
 Quiz.propTypes = {
-  questions: PropTypes.object,
+  questions: PropTypes.array,
   setQuestions: PropTypes.func,
 };

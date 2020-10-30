@@ -24,5 +24,20 @@ describe('App', () => {
       expect(getByTestId('quiz')).toBeInTheDocument();
     });
   });
+  it('should render the first question', async () => {
+    const { getByTestId, getByText } = render(<App />);
+    await waitForElement(() => getByTestId('splash')).then(() => {
+      fireEvent.click(getByTestId('splash-button'));
+      expect(getByText('1/10')).toBeInTheDocument();
+    });
+  });
+  it('should render the result when an answer is clicked', async () => {
+    const { getByTestId, getByText } = render(<App />);
+    await waitForElement(() => getByTestId('splash')).then(() => {
+      fireEvent.click(getByTestId('splash-button'));
+      fireEvent.click(getByTestId('a1'));
+      expect(getByText(/Click here/)).toBeInTheDocument();  
+    });
+  });
 });
 
