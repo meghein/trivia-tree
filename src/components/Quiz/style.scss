@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 #quiz {
   display: grid;
@@ -11,7 +11,7 @@
   width: 650px;
   padding: 2em;
   background-color: $morning-blue;
-  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+  background-image: url('https://www.transparenttextures.com/patterns/60-lines.png');
   border: 10px solid $sage;
   border-radius: 50px;
   &:hover{

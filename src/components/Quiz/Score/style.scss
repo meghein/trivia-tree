@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 #score {
   text-align: center;
@@ -6,7 +6,7 @@
   width: 500px;
   padding: 2em;
   background-color: $morning-blue;
-  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png');
   border: 10px solid $sage;
   border-radius: 50px;
   &:hover{

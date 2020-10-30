@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import { QuizContext } from 'context/Provider';
 import { ACTION } from 'reducer/reducer';
 import { generateRandomAnswers, generateAnswersKey } from 'helpers/generators';

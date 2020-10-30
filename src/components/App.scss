@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 .App {
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
   min-height: 100vh;
   min-width: 100vw;
-  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png"), linear-gradient($indigo, $teal);
+  background-image: url('https://www.transparenttextures.com/patterns/white-diamond-dark.png'), linear-gradient($indigo, $teal);
   .splash-page {
     max-width: 80%;
     h1 {

@@ -19,12 +19,12 @@ export default function App() {
   }
 
   return (
-    <div className="App">
+    <div className='App'>
       <QuizProvider>
         {splashPage && 
-          <div className='splash-page' data-testid="splash">
+          <div className='splash-page' data-testid='splash'>
             <h1>Ready to Take the Tandem Test??</h1>
-            <button data-testid="splash-button" onClick={handleSplash}>Click here to flex your smarts!</button>
+            <button data-testid='splash-button' onClick={handleSplash}>Click here to flex your smarts!</button>
           </div>
         }
         {!splashPage &&
