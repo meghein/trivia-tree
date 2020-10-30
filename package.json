@@ -13,7 +13,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "yarn test --coverage --watchAll=false"
+    "coverage": "yarn test --coverage --watchAll=false",
+    "cypress": "cypress open -P ."
   },
   "browserslist": {
     "production": [
