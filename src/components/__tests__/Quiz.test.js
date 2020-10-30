@@ -1,16 +1,15 @@
 import React from 'react';
 import { render, cleanup, waitForElement, fireEvent } from '@testing-library/react';
-import Provider, { useStateContext, useDispatchContext } from 'context/Provider';
+import QuizProvider, { QuizContext } from 'context/Provider';
 import App from '../App';
 import Quiz from '../Quiz';
 
 const renderWithContext = (component) => {
-  const { currentQ, results } = useStateContext()
   return {
     ...render(
-        <Provider>
+        <QuizProvider value={QuizContext}>
             {component}
-        </Provider>)
+        </QuizProvider>)
   }
 }
 

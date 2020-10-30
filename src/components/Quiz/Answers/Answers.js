@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import QuizProvider, { QuizContext } from 'context/Provider';
+import PropTypes from "prop-types";
+import { QuizContext } from 'context/Provider';
 import { ACTION } from 'reducer/reducer';
-// import { useDispatchContext } from 'context/Provider';
 import { generateRandomAnswers, generateAnswersKey } from 'helpers/generators';
 import './style.scss';
 
 export default function Answers({question}) {
   const { dispatch } = useContext(QuizContext);
-  const choices = []
+  const choices = [];
 
   const answers = generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{
     choices.push(answer);
@@ -21,11 +21,15 @@ export default function Answers({question}) {
     answersKey[e.target.value] === true 
     ? dispatch({type: ACTION.RESULTS, payload: 'correct'})
     : dispatch({type: ACTION.RESULTS, payload: 'incorrect'});
-  };
+  }
 
   return (
     <div className='choices'>
       {answers}
     </div>
-  )
+  );
+}
+
+Answers.propTypes = {
+  question: PropTypes.object,
 };

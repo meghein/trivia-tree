@@ -16,18 +16,20 @@ export default function reducer(state, action) {
       return({...state, quiz: action.payload})
     case ACTION.ANSWERS_KEY:
       return({...state, answersKey: action.payload})
-    case ACTION.CURRENT_Q:
+    case ACTION.CURRENT_Q: {
       let tempCurrent = state.currentQ
       tempCurrent += action.payload
       return({...state, currentQ: tempCurrent})
+    }
     case ACTION.CHOICE:
       return({...state, options: action.answers, choice: action.choice})
     case ACTION.RESULTS:
       return({...state, results: action.payload})
-    case ACTION.SCORE:
+    case ACTION.SCORE: {
       let tempScore = state.score
       tempScore += action.payload
       return({...state, score: tempScore})
+    }
     case ACTION.RESET:
       return({
         ...state,

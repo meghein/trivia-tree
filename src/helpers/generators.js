@@ -6,7 +6,7 @@ export function generateRandomArr(arr, newLength) {
     resultsArr.includes(newElm) ? newLength += 1 : resultsArr.push(newElm);
   }
   return resultsArr;
-};
+}
 
 // Creates a randomly ordered array of answers:
 export function generateRandomAnswers(correct, incorrect) {
@@ -15,7 +15,7 @@ export function generateRandomAnswers(correct, incorrect) {
     answersArr.push(answer);
   }
   return generateRandomArr(answersArr, answersArr.length);
-};
+}
 
 // Creates an answers object that holds booleans for each answer:
 export function generateAnswersKey(correct, incorrect) {
@@ -25,7 +25,7 @@ export function generateAnswersKey(correct, incorrect) {
     answersObj[wrong] = false;
   }
   return answersObj;
-};
+}
 
 // Creates an array with the choices in the same order as before
 // and the correct answer highlighted in green:
@@ -46,7 +46,7 @@ export function generateCorrect(options, answers, choice) {
     }
   })
   return correctArr;
-};
+}
 
 // Creates an array with the choices in the same order as before
 // and the user's choice highlighted in red and the correct answer highlighted in green:
@@ -77,7 +77,4 @@ export function generateIncorrect(options, answers, choice) {
     }
   })
   return incorrectArr;
-};
-
-
-
+}

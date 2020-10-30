@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { generateRandomArr } from 'helpers/generators';
 import QuizProvider from 'context/Provider';
 import questions from 'data/questions.json';
+import { generateRandomArr } from 'helpers/generators';
 import Quiz from './Quiz';
 import Footer from './Footer';
 import './App.scss';
@@ -16,7 +16,7 @@ export default function App() {
 
     // create round of 10 question from data store:
     setQuestionsArr(generateRandomArr(questions, 10));
-  };
+  }
 
   return (
     <div className="App">
@@ -34,4 +34,4 @@ export default function App() {
       </QuizProvider>
     </div>
   );
-};
+}

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import QuizProvider, { QuizContext } from 'context/Provider';
+import { QuizContext } from 'context/Provider';
 import { ACTION } from 'reducer/reducer';
 import { generateCorrect } from 'helpers/generators';
 import './style.scss';
@@ -12,7 +12,7 @@ export default function Correct() {
     dispatch({type: ACTION.CURRENT_Q, payload: 1})
     dispatch({type: ACTION.SCORE, payload: 1})
     dispatch({type: ACTION.RESULTS, payload: 'pending'})
-  };
+  }
 
   const results = generateCorrect(options, answersKey, choice).map(option => {
     return option;
@@ -32,6 +32,5 @@ export default function Correct() {
         </div>
       }
     </div>
-
-  )
-};
+  );
+}

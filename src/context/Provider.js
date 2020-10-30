@@ -1,16 +1,9 @@
-import React, { createContext, useContext, useReducer } from 'react';
-import reducer from 'reducer/reducer'
+import React, { createContext, useReducer } from 'react';
+import PropTypes from 'prop-types';
+import reducer from 'reducer/reducer';
 export const QuizContext = createContext();
-// const DispatchContext = createContext();
 
-// export function useStateContext() {
-//   return useContext(StateContext)
-// }
-
-// export function useDispatchContext() {
-//   return useContext(DispatchContext)
-// }
-export default function Provider({children}) {
+export default function QuizProvider({children}) {
   const [state, dispatch] = useReducer(reducer, {
     quiz: [],
     answersKey: {},
@@ -26,4 +19,10 @@ export default function Provider({children}) {
       {children}
     </QuizContext.Provider>
   )
+}
+
+QuizProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node]).isRequired
 }

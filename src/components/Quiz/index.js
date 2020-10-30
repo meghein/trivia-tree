@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from "prop-types";
 import { QuizContext } from 'context/Provider';
 import Answers from './Answers/Answers';
 import Correct from './Answers/Correct';
@@ -8,8 +9,8 @@ import Score from './Score';
 import './style.scss';
 
 export default function Quiz({questions, setQuestions}) {
-  const { state } = useContext(QuizContext)
-  const { currentQ, results } = state
+  const { state } = useContext(QuizContext);
+  const { currentQ, results } = state;
 
   return (
     <>
@@ -28,5 +29,10 @@ export default function Quiz({questions, setQuestions}) {
         <Score setQuestions={setQuestions}/>
       }
     </>
-  )
+  );
 }
+
+Quiz.propTypes = {
+  questions: PropTypes.object,
+  setQuestions: PropTypes.func,
+};
