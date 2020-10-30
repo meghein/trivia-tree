@@ -11,7 +11,11 @@ export default function Answers({question}) {
 
   const answers = generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{
     choices.push(answer);
-    return <button data-testid={`a${index+1}`} className={`answer a${index+1}`} key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
+    if (answer === question.correct) {
+      return <button data-testid={`correct`} className={`answer a${index+1}`} key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
+    } else {
+      return <button data-testid={`incorrect${index+1}`} className={`answer a${index+1}`} key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
+    }
   });
 
   function validate(e) {
