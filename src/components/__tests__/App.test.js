@@ -5,10 +5,6 @@ import App from '../App';
 afterEach(cleanup);
 
 describe('App', () => {
-  it('should take a snapshot', () => {
-    const { asFragment } = render(<App />)
-    expect(asFragment(<App />)).toMatchSnapshot()
-  });
   it('renders without crashing', () => {
     render(<App/>);
   });
