@@ -4,9 +4,9 @@
   grid-area: choices;
   display: grid;
   grid-template:
-  [row1-start] 'a1 a2' 1fr [row1-end]
-  [row2-start] 'a3 a3' 1fr [row2-end]
-  / 1fr 1fr;
+    [row1-start] 'a1 a2' 1fr [row1-end]
+    [row2-start] 'a3 a3' 1fr [row2-end]
+    / 1fr 1fr;
   gap: 1em;
   .answer {
     font-weight: 700;
@@ -21,11 +21,28 @@
   &:hover > .answer:hover {
   opacity: 1.0;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 768px) {
     gap: .8em;
   }
   @media (max-width: 500px) {
     font-size: .4em;
+    grid-template:
+      [row1-start] 'a1' 1fr [row1-end]
+      [row2-start] 'a2' 1fr [row2-end]
+      [row3-start] 'a3' 1fr [row3-end]
+      [row4-start] 'a4' 1fr [row4-end]
+      / 1fr;
+    gap: 1em;
+  }
+  @media (max-height: 500px) {
+    font-size: .4em;
+    grid-template:
+      [row1-start] 'a1' 1fr [row1-end]
+      [row2-start] 'a2' 1fr [row2-end]
+      [row3-start] 'a3' 1fr [row3-end]
+      [row4-start] 'a4' 1fr [row4-end]
+      / 1fr;
+    gap: 1em;
   }
 }
 .results {
@@ -53,9 +70,13 @@
       background-color: $teal;
       font-size: 1em;
       color: $sage;
+      @media (max-width: 500px) {
+        font-size: 1.2em;
+        width: 80%;
+      }
     }
   }
-  @media (max-width: 650px) {
+  @media (max-width: 768px) {
     grid-template:
     [row1-start] 'a1 a2' 1fr [row1-end]
     [row2-start] 'results results' 35px [row2-end]
@@ -65,5 +86,22 @@
   }
   @media (max-width: 500px) {
     font-size: .4em;
+    grid-template:
+      [row1-start] 'a1' 1fr [row1-end]
+      [row2-start] 'a2' 1fr [row2-end]
+      [row3-start] 'a3' 1fr [row3-end]
+      [row4-start] 'a4' 1fr [row4-end]
+      [row5-start] 'results' 1fr [row5-end]
+      / 1fr;
+    gap: 1em;
+  }
+  @media (max-height: 500px) {
+    font-size: .4em;
+    grid-template:
+      [row1-start] 'a1 a2' 1fr [row1-end]
+      [row2-start] 'a3 a4' 1fr [row2-end]
+      [row5-start] 'results results' 0px [row5-end]
+      / 1fr 1fr;
+    gap: 1em;
   }
 }

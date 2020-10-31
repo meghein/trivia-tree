@@ -24,25 +24,44 @@
     color: $indigo;
     font-size: 1.8em;
   }
-  @media (max-width: 650px) {
-    width: 500px;
+  @media (max-width: 768px) {
+    width: 400px;
     h2 {
       font-size: 1.4em;
       padding-bottom: .5em;
     }
   }
   @media (max-width: 500px) {
-    width: 250px;
-    height: 250px;
+    margin-top: -9em;
+    width: 200px;
+    height: 350px;
     padding: 2em;
-    padding-top: 1em;
     grid-template:
-      [row1-start] 'question' 80px [row1-end]
+      [row1-start] 'question' 70px [row1-end]
       [row2-start] 'choices' auto [row2-end]
       [row3-start] 'progress' 30px [row3-end]
       / 1fr;
     h2 {
+      margin-top: 0;
       font-size: .8em;
+    }
+  }
+  @media (max-height: 595px) {
+    width: 450px;
+    height: 300px;
+  }
+  @media (max-height: 500px) {
+    width: 200px;
+    height: 200px;
+    padding: 1.2em;
+    grid-template:
+      [row1-start] 'question' 30px [row1-end]
+      [row2-start] 'choices' auto [row2-end]
+      [row3-start] 'progress' 20px [row3-end]
+      / 1fr;
+    h2 {
+      font-size: .8em;
+      margin-top: -1em;
     }
   }
 }

@@ -11,9 +11,9 @@ body {
   }
   button {
     background-color: $sage;
-    padding: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     border-style: none;
     border-radius: 50px;
     font-family: $button-font;
@@ -23,10 +23,13 @@ body {
     &:hover{
       box-shadow: 10px 10px 10px $shadow;
     }
-    @media (max-width: 650px) {
-      padding: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
+    @media (max-width: 768px) {
+      // padding: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @media (max-height: 500px) {
+      padding: 5px;
     }
   }
 }
