@@ -1,3 +1,4 @@
+![code coverage](https://badgen.net/badge/coverage/95.83%25/green)
 # The Tandem Test
 
 [![desktop version](https://github.com/meghein/tandem-test/blob/master/docs/desktop.gif?raw=true)](https://github.com/meghein/tandem-test)
@@ -15,7 +16,7 @@ __A client-side SPA (single-page app) built with ReactJS for quick and simple qu
 ## Project Stack
 React, JSX, HTML, SASS, JavaScript
 
-__Testing:__ Jest, Cypress ![code coverage](https://badgen.net/badge/coverage/95.83%25/green)
+__Testing:__ Jest, Cypress
 
 ## Dependencies
 - babel
