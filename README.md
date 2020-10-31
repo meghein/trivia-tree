@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+[![code coverage](https://badgen.net/badge/coverage/95%83/green)](https://github.com/meghein/tandem-test)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The Tandem Test
 
-## Available Scripts
+A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms. The app is deployed using CircleCI and Netlify.
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### GamePlay Demo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[![desktop version](https://github.com/meghein/tandem-test/blob/master/docs/desktop.gif?raw=true)](https://github.com/meghein/tandem-test)
+[![responsive design](https://github.com/meghein/tandem-test/blob/master/docs/responsive.gif?raw=true)](https://github.com/meghein/tandem-test)
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Technical Details
+
+The app is built using Node.js. Individual components are implemented using classes, an efficient algorithm is used to check if the ship is placeable on the board or not. Also, the app makes use of the following NPM packages for a great UX experience:
+
+1. `figlet` for the retro game font at the beginning of the game
+2. `chalk` for colourful fonts
+3. `prompts` for interactive user input
+
+The app is linted using `eslint` and uses `jest` for comprehensive mock game-play testing (current test coverage is 88%).
+
+### Salient Features
+
+- Interactive user input allowing to select from the list of options
+- Improved validation of user input without using loops and faster feedback to the user of invalid input.
+- Allow players to have names.
+- Print gameboard at every round.
+- Let the user know if they already hit a spot before.
+- Print victory message with a final view of the battlefield with the location of ships (boards of both player's)
+
+### Gameplay Features
+
+- Two Player game
+- Two boards (one for each player)
+- 1 Ship (length of 3) - can be placed vertical or horizontally (fully extensible to allow for more ships of various sizes)
+- Ask the location for placement of Ship for each player.
+- Fire a single shot per turn (Hit, Miss, or if the ship has been Sunk (3 hits) then register a “you sunk enemy battleship”)
+- game ends when one player sunk other player's ship
+
+### Installation
+
+
+
+### Testing
+
+
+
+## Copyright
+
+MIT License 2020, Meghan Hein
