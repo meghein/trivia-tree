@@ -35,10 +35,10 @@ __Testing:__ Jest, Cypress ![code coverage](https://badgen.net/badge/coverage/95
 - Reactive progress bar that uses a simple css animation to log quiz session
 - Responsive design
 
-## Technical Details
+### Technical Details
 The project was designed for consideration in [Tandem's Apprenticeship Program](https://madeintandem.com/about/apprenticeship-program/).
 
 It was built in React with a provided local object database.
 
-## Copyright
+### Copyright
 MIT License 2020, Meghan Hein
