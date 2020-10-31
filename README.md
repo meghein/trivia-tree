@@ -1,9 +1,9 @@
-[![code coverage](https://badgen.net/badge/coverage/95.83%25/green)]
+![code coverage](https://badgen.net/badge/coverage/95.83%25/green)
 # The Tandem Test
 
 [![desktop version](https://github.com/meghein/tandem-test/blob/master/docs/desktop.gif?raw=true)](https://github.com/meghein/tandem-test)
 
-A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms. The app is deployed using CircleCI and Netlify.
+##### A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms. The app is deployed using CircleCI and Netlify.
 
 [To view live version of the app, click here](https://the-tandem-test.netlify.app/ "Netlify deployment")
 
