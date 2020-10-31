@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Push Master to Production
           command: |
-            git push https://github.com/meghein/tandem-code-challenge.git master:production
+            git push https://github.com/meghein/tadem-coding-challenge master:production
 
 workflows:
   version: 2
