@@ -23,12 +23,12 @@ export default function Correct() {
       {results}
       {currentQ <= 8 &&
         <div className='next'>
-          <button id='nextQ' onClick={handleNext}>Correct! Click here for the next question.</button>
+          <button data-testid='nextQ' onClick={handleNext}>Correct! Click here for the next question.</button>
         </div>
       }
       {currentQ === 9 &&
         <div className='next'>
-          <button id='nextQ' onClick={handleNext}>View score!</button>
+          <button data-testid='nextQ' onClick={handleNext}>View score!</button>
         </div>
       }
     </div>

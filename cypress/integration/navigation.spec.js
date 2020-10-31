@@ -11,20 +11,20 @@ describe('Navigation', () => {
   })
   it('should display "Correct!" when a correct answer is clicked', () => {
     cy.get('[data-testid=correct]').click()
-      .get('#nextQ')
+      .get('[data-testid=nextQ]')
       .should('contain', 'Correct!')
   })
   it('should display "Wrong!" when a incorrect answer is clicked', () => {
     cy.get('[data-testid=incorrect1]')
     ? cy.get('[data-testid=incorrect1]').click()
     : cy.get('[data-testid=incorrect2]').click()
-        .get('#nextQ')
+        .get('[data-testid=nextQ]')
         .should('contain', 'Wrong!')
   })
   it('should display the user\'s score after 10 questions', () => {
     for (let i = 0; i < 10; i++) {
       cy.get('.a1').click()
-        .get('#nextQ').click()
+        .get('[data-testid=nextQ]').click()
     }
     cy.get('#score')
       .should('contain', 'Your score')
@@ -32,7 +32,7 @@ describe('Navigation', () => {
   it('should load a new quiz when a user clicks "play again?"', () => {
     for (let i = 0; i < 10; i++) {
       cy.get('.a1').click()
-        .get('#nextQ').click()
+        .get('[data-testid=nextQ]').click()
     }
     cy.get('.play-again')
       .click()
