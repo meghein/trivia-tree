@@ -11,7 +11,7 @@ export default function Footer() {
       <p className='name'>Made with {<FontAwesomeIcon icon={faHeart} />} by Meghan Hein</p>
       <div className='links'>
         <a href='mailto:meghan.hein@gmail.com'><FontAwesomeIcon icon={faEnvelope}/></a>
-        <a href='https://github.com/meghein/tandem-test' target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faGithub}/></a>
+        <a href='https://github.com/meghein/trivia-troll' target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faGithub}/></a>
         <a href='https://www.linkedin.com/in/meghan-hein/' target='_blank' rel='noreferrer'><FontAwesomeIcon icon={faLinkedin}/></a>
       </div>
     </footer>

@@ -23,7 +23,7 @@ export default function App() {
       <QuizProvider>
         {splashPage && 
           <div className='splash-page' data-testid='splash'>
-            <h1>Ready to Take the Tandem Test??</h1>
+            <h1>Ready to Take the Trivia Troll??</h1>
             <button data-testid='splash-button' onClick={handleSplash}>Click here to flex your smarts!</button>
           </div>
         }

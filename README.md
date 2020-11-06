@@ -1,11 +1,9 @@
 ![code coverage](https://badgen.net/badge/coverage/95.83%25/green)
-# The Tandem Test
-
-[![desktop version](https://github.com/meghein/tandem-test/blob/master/docs/desktop.gif?raw=true)](https://github.com/meghein/tandem-test)
+# The Trivia Troll
 
 __A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms. The app is deployed using CircleCI and Netlify.__
 
-[To view live version of the app, click here](https://the-tandem-test.netlify.app/ "Netlify deployment")
+<!-- [To view live version of the app, click here](https://the-tandem-test.netlify.app/ "Netlify deployment") -->
 
 ## Getting Started
 1. Fork this repository, then clone your fork of this repository.
@@ -37,9 +35,9 @@ __Testing:__ Jest, Cypress
 - Responsive design
 
 ### Technical Details
-The project was designed for consideration in [Tandem's Apprenticeship Program](https://madeintandem.com/about/apprenticeship-program/).
+The project was originally designed for consideration in [Tandem's Apprenticeship Program](https://madeintandem.com/about/apprenticeship-program/) and built with a provided local object database. For workflow and commit reference please visit the original repo [here](https://github.com/meghein/tandem-test).
 
-It was built in React with a provided local object database.
+The project was cloned in order to continue building upon the features available, such as replacing the database with an open source trivia API, without altering the original product.
 
 ### Copyright
 MIT License 2020, Meghan Hein
