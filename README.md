@@ -9,8 +9,8 @@ __A client-side SPA (single-page app) built with ReactJS for quick and simple qu
 
 ## Getting Started
 1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `yarn install` or `npm install` command.
-3. Start the web server using the `yarn start` or `npm start` command.
+2. Install dependencies using the `yarn install` command.
+3. Start the web server using the `yarn start` command.
 4. To run tests: `yarn test`, `yarn run coverage`, `yarn run cypress`
 
 ## Project Stack
