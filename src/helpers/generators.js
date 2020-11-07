@@ -12,11 +12,12 @@ export function removeUnicode(str) {
   const dblQuote = '&quot;';
   const sglQuote = '&#039;';
   if(str.includes(dblQuote)) {
-    str.replace(dblQuote, /"/)
+    str = str.replaceAll(dblQuote, '\'')
   }
   if(str.includes(sglQuote)) {
-    str.replace(sglQuote, /'/)
+    str = str.replaceAll(sglQuote, '\'')
   }
+  return str
 }
 
 // Creates a randomly ordered array of answers:
