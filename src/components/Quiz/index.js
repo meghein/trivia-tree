@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { QuizContext } from 'context/Provider';
+import { removeUnicode } from 'helpers/generators';
 import Answers from './Answers/Answers';
 import Correct from './Answers/Correct';
 import Incorrect from './Answers/Incorrect';
@@ -16,7 +17,7 @@ export default function Quiz({questions, setQuestions, database}) {
     <>
       {currentQ <= 9 &&
         <div id='quiz' data-testid='quiz'>
-        <h2 className='q-title'>{questions[currentQ].question}</h2>
+        <h2 className='q-title'>{removeUnicode(questions[currentQ].question)}</h2>
         {results === 'pending' &&
           <Answers question={questions[currentQ]}/>
         }

@@ -8,11 +8,22 @@ export function generateRandomArr(arr, newLength) {
   return resultsArr;
 }
 
+export function removeUnicode(str) {
+  const dblQuote = '&quot;';
+  const sglQuote = '&#039;';
+  if(str.includes(dblQuote)) {
+    str.replace(dblQuote, /"/)
+  }
+  if(str.includes(sglQuote)) {
+    str.replace(sglQuote, /'/)
+  }
+}
+
 // Creates a randomly ordered array of answers:
 export function generateRandomAnswers(correct, incorrect) {
-  const answersArr = [correct];
+  const answersArr = [removeUnicode(correct)];
   for (const answer of incorrect) {
-    answersArr.push(answer);
+    answersArr.push(removeUnicode(answer));
   }
   return generateRandomArr(answersArr, answersArr.length);
 }
