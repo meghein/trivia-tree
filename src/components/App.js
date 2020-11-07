@@ -9,7 +9,6 @@ import './App.scss';
 
 export default function App() {
   const [database, setDatabase] = useState('')
-  // const [category, setCategory] = useState('')
   const [splashPage, setSplashPage] = useState(true);
   const [questionsArr, setQuestionsArr] = useState([]);
 
@@ -18,14 +17,12 @@ export default function App() {
     const general = axios.get(`https://opentdb.com/api.php?amount=50&category=9&type=multiple`);
     const myth = axios.get(`https://opentdb.com/api.php?amount=50&type=multiple`);
     Promise.all([animal, general, myth]).then(all => {
-      console.log("all:", all)
+      console.log("categories:", all)
       setDatabase({animal: all[0].data.results, general: all[1].data.results, myth: all[2].data.results})
     });
   }, [])
 
   function handleSplash(e) {
-    // console.log('data:', database);
-    console.log('value:', database[e.target.value]);
     // toggle splash-page/quiz components:
     splashPage ? setSplashPage(false) : setSplashPage(true);
 
@@ -45,7 +42,11 @@ export default function App() {
           </div>
         }
         {!splashPage &&
-          <Quiz questions={questionsArr} setQuestions={setQuestionsArr}/>
+          <Quiz
+            questions={questionsArr}
+            setQuestions={setQuestionsArr}
+            database={database}
+          />
         }
         <Footer/>
       </QuizProvider>

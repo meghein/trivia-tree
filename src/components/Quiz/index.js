@@ -8,7 +8,7 @@ import ProgressBar from './ProgressBar';
 import Score from './Score';
 import './style.scss';
 
-export default function Quiz({questions, setQuestions}) {
+export default function Quiz({questions, setQuestions, database}) {
   const { state } = useContext(QuizContext);
   const { currentQ, results } = state;
 
@@ -26,7 +26,10 @@ export default function Quiz({questions, setQuestions}) {
         </div>
       }
       {currentQ === 10 &&
-        <Score setQuestions={setQuestions}/>
+        <Score
+          setQuestions={setQuestions}
+          database={database}
+        />
       }
     </>
   );
@@ -35,4 +38,5 @@ export default function Quiz({questions, setQuestions}) {
 Quiz.propTypes = {
   questions: PropTypes.array,
   setQuestions: PropTypes.func,
+  database: PropTypes.object
 };
