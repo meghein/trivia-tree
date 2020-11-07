@@ -9,9 +9,9 @@ export default function Answers({question}) {
   const { dispatch } = useContext(QuizContext);
   const choices = [];
 
-  const answers = generateRandomAnswers(question.correct, question.incorrect).map((answer, index) =>{
+  const answers = generateRandomAnswers(question.correct_answer, question.incorrect_answers).map((answer, index) =>{
     choices.push(answer);
-    if (answer === question.correct) {
+    if (answer === question.correct_answer) {
       return <button data-testid={`correct`} className={`answer a${index+1}`} key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
     } else {
       return <button data-testid={`incorrect${index+1}`} className={`answer a${index+1}`} key={`answer${index}`} onClick={validate} value={answer}>{answer}</button>
@@ -19,7 +19,7 @@ export default function Answers({question}) {
   });
 
   function validate(e) {
-    const answersKey = generateAnswersKey(question.correct, question.incorrect);
+    const answersKey = generateAnswersKey(question.correct_answer, question.incorrect_answers);
     dispatch({type: ACTION.ANSWERS_KEY, payload: answersKey})
     dispatch({type: ACTION.CHOICE, choice: e.target.value, answers: choices})
     answersKey[e.target.value] === true 
