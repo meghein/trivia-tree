@@ -54,7 +54,7 @@ export default function App() {
       <QuizProvider>
         {page === 'initial' &&
           <div>
-            <h1>It&lsquo;s almost Quiz Time!</h1>
+            <h1>Welcome to Trivia Tree!</h1>
             <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
           </div>
         }
