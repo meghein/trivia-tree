@@ -78,6 +78,7 @@ export default function App() {
             questions={questionsArr}
             setQuestions={setQuestionsArr}
             database={database}
+            setPage={setPage}
           />
         }
         <Footer/>

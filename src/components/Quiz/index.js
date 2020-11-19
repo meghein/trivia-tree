@@ -9,7 +9,7 @@ import ProgressBar from './ProgressBar';
 import Score from './Score';
 import './style.scss';
 
-export default function Quiz({questions, setQuestions, database}) {
+export default function Quiz({questions, setPage, setQuestions, database}) {
   const { state } = useContext(QuizContext);
   const { currentQ, results } = state;
 
@@ -30,6 +30,7 @@ export default function Quiz({questions, setQuestions, database}) {
         <Score
           setQuestions={setQuestions}
           database={database}
+          setPage={setPage}
         />
       }
     </>
@@ -39,5 +40,6 @@ export default function Quiz({questions, setQuestions, database}) {
 Quiz.propTypes = {
   questions: PropTypes.array,
   setQuestions: PropTypes.func,
+  setPage: PropTypes.func,
   database: PropTypes.object
 };
