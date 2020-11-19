@@ -8,23 +8,39 @@ export function generateRandomArr(arr, newLength) {
   return resultsArr;
 }
 
-export function removeUnicode(str) {
-  const dblQuote = '&quot;';
-  const sglQuote = '&#039;';
-  if(str.includes(dblQuote)) {
-    str = str.replaceAll(dblQuote, '\'')
+export function removeEntities(str) {
+  const dblQuotes = ['&quot;', '&ldquo;', '&rdquo;'];
+  const singleQuotes = ['&#039;', '&rsquo;'];
+  const diaeresis = '&euml;';
+  const ellipsis = '&hellip;';
+
+  for (let entity of dblQuotes) {
+    if (str.includes(entity))  {
+      str = str.replaceAll(entity, '"')
+    }
   }
-  if(str.includes(sglQuote)) {
-    str = str.replaceAll(sglQuote, '\'')
+  for (let entity of singleQuotes) {
+    if (str.includes(entity))  {
+      str = str.replaceAll(entity, '\'')
+    }
   }
-  return str
+  if(str.includes(diaeresis)) {
+    str = str.replaceAll(diaeresis, 'ë')
+  }
+  if(str.includes(ellipsis)) {
+    str = str.replaceAll(ellipsis, '...')
+  }
+  if (str.includes('&')) {
+    console.log(str)
+  }
+  return str;
 }
 
 // Creates a randomly ordered array of answers:
 export function generateRandomAnswers(correct, incorrect) {
-  const answersArr = [removeUnicode(correct)];
+  const answersArr = [removeEntities(correct)];
   for (const answer of incorrect) {
-    answersArr.push(removeUnicode(answer));
+    answersArr.push(removeEntities(answer));
   }
   return generateRandomArr(answersArr, answersArr.length);
 }

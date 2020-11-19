@@ -9,7 +9,7 @@ import './App.scss';
 
 export default function App() {
   const [database, setDatabase] = useState('')
-  const [splashPage, setSplashPage] = useState(true);
+  const [page, setPage] = useState('initial');
   const [questionsArr, setQuestionsArr] = useState([]);
 
   useEffect(() => {
@@ -19,12 +19,13 @@ export default function App() {
     Promise.all([animal, general, myth]).then(all => {
       console.log("categories:", all)
       setDatabase({animal: all[0].data.results, general: all[1].data.results, myth: all[2].data.results})
+      setPage('splash')
     });
   }, [])
 
   function handleSplash(e) {
     // toggle splash-page/quiz components:
-    splashPage ? setSplashPage(false) : setSplashPage(true);
+    setPage('quiz');
 
     // create round of 10 question from data store:
     setQuestionsArr(generateRandomArr(database[e.target.value], 10));
@@ -33,15 +34,21 @@ export default function App() {
   return (
     <div className='App'>
       <QuizProvider>
-        {splashPage && 
+        {page === 'initial' &&
+          <div>
+            <h1>Welcome to Trivia Troll...</h1>
+            <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
+        }
+        {page === 'splash' && 
           <div className='splash-page' data-testid='splash'>
-            <h1>Welcome to Trivia Troll??</h1>
+            <h1>Welcome to Trivia Troll</h1>
             <button data-testid='splash-button' onClick={handleSplash} value='animal'>Animal Kingdom</button>
             <button data-testid='splash-button' onClick={handleSplash} value='general'>General Knowledge</button>
             <button data-testid='splash-button' onClick={handleSplash} value='myth'>Mythology</button>
           </div>
         }
-        {!splashPage &&
+        {page === 'quiz' &&
           <Quiz
             questions={questionsArr}
             setQuestions={setQuestionsArr}
