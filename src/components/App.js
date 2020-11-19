@@ -16,9 +16,27 @@ export default function App() {
     const animal = axios.get(`https://opentdb.com/api.php?amount=50&category=27&type=multiple`);
     const general = axios.get(`https://opentdb.com/api.php?amount=50&category=9&type=multiple`);
     const myth = axios.get(`https://opentdb.com/api.php?amount=50&type=multiple`);
-    Promise.all([animal, general, myth]).then(all => {
+    const science = axios.get(`https://opentdb.com/api.php?amount=50&category=17&type=multiple`)
+    const geography = axios.get(`https://opentdb.com/api.php?amount=50&category=22&type=multiple`)
+    const art = axios.get(`https://opentdb.com/api.php?amount=50&category=25&type=multiple`)
+    const cartoon = axios.get(`https://opentdb.com/api.php?amount=50&category=32&type=multiple`)
+    const history = axios.get(`https://opentdb.com/api.php?amount=50&category=23&type=multiple`)
+    const film = axios.get(`https://opentdb.com/api.php?amount=50&category=11&type=multiple`)
+    const music = axios.get(`https://opentdb.com/api.php?amount=50&category=12&type=multiple`)
+    Promise.all([animal, general, myth, science, geography, art, cartoon, history, film, music]).then(all => {
       console.log("categories:", all)
-      setDatabase({animal: all[0].data.results, general: all[1].data.results, myth: all[2].data.results})
+      setDatabase({
+        animal: all[0].data.results,
+        general: all[1].data.results,
+        myth: all[2].data.results,
+        science: all[3].data.results,
+        geography: all[4].data.results,
+        art: all[5].data.results,
+        cartoon: all[6].data.results,
+        history: all[7].data.results,
+        film: all[8].data.results,
+        music: all[9].data.results,
+      })
       setPage('splash')
     });
   }, [])
@@ -36,16 +54,23 @@ export default function App() {
       <QuizProvider>
         {page === 'initial' &&
           <div>
-            <h1>Welcome to Trivia Troll...</h1>
+            <h1>It&lsquo;s almost Quiz Time!</h1>
             <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
           </div>
         }
         {page === 'splash' && 
           <div className='splash-page' data-testid='splash'>
-            <h1>Welcome to Trivia Troll</h1>
-            <button data-testid='splash-button' onClick={handleSplash} value='animal'>Animal Kingdom</button>
+            <h1>Choose wisely...</h1>
             <button data-testid='splash-button' onClick={handleSplash} value='general'>General Knowledge</button>
+            <button data-testid='splash-button' onClick={handleSplash} value='animal'>Animal Kingdom</button>
             <button data-testid='splash-button' onClick={handleSplash} value='myth'>Mythology</button>
+            <button data-testid='splash-button' onClick={handleSplash} value='science'>Science &#38; Nature</button>
+            <button data-testid='splash-button' onClick={handleSplash} value='geography'>Geography</button>
+            <button data-testid='splash-button' onClick={handleSplash} value='art'>Art</button>
+            <button data-testid='splash-button' onClick={handleSplash} value='cartoon'>Cartoon &#38; Animations</button>
+            <button data-testid='splash-button' onClick={handleSplash} value='history'>History</button>
+            <button data-testid='splash-button' onClick={handleSplash} value='film'>Film</button>
+            <button data-testid='splash-button' onClick={handleSplash} value='music'>Music</button>
           </div>
         }
         {page === 'quiz' &&
