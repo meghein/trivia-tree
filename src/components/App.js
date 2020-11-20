@@ -18,7 +18,7 @@ export default function App() {
     const myth = axios.get(`https://opentdb.com/api.php?amount=50&type=multiple`);
     const science = axios.get(`https://opentdb.com/api.php?amount=50&category=17&type=multiple`)
     const geography = axios.get(`https://opentdb.com/api.php?amount=50&category=22&type=multiple`)
-    const art = axios.get(`https://opentdb.com/api.php?amount=50&category=25&type=multiple`)
+    const art = axios.get(`https://opentdb.com/api.php?amount=23&category=25&type=multiple`)
     const cartoon = axios.get(`https://opentdb.com/api.php?amount=50&category=32&type=multiple`)
     const history = axios.get(`https://opentdb.com/api.php?amount=50&category=23&type=multiple`)
     const film = axios.get(`https://opentdb.com/api.php?amount=50&category=11&type=multiple`)
@@ -60,7 +60,7 @@ export default function App() {
         }
         {page === 'splash' && 
           <div className='splash-page' data-testid='splash'>
-            <h1>Choose wisely...</h1>
+            <h1>Test your smarts with one of these categories:</h1>
             <button data-testid='splash-button' onClick={handleSplash} value='general'>General Knowledge</button>
             <button data-testid='splash-button' onClick={handleSplash} value='animal'>Animal Kingdom</button>
             <button data-testid='splash-button' onClick={handleSplash} value='myth'>Mythology</button>
@@ -71,13 +71,12 @@ export default function App() {
             <button data-testid='splash-button' onClick={handleSplash} value='history'>History</button>
             <button data-testid='splash-button' onClick={handleSplash} value='film'>Film</button>
             <button data-testid='splash-button' onClick={handleSplash} value='music'>Music</button>
+            <p>All questions courtesy of <a href='https://opentdb.com/' target='_blank' rel='noreferrer'>Open Trivia Database</a></p>
           </div>
         }
         {page === 'quiz' &&
           <Quiz
             questions={questionsArr}
-            setQuestions={setQuestionsArr}
-            database={database}
             setPage={setPage}
           />
         }
