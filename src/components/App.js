@@ -7,7 +7,7 @@ import Footer from './Footer';
 import './App.scss';
 
 export default function App() {
-  const { state, setPage, setQuestionsArr } = useData();
+  const { categories, state, setPage, setQuestionsArr } = useData();
 
   function handleSplash(e) {
     // toggle splash-page/quiz components:
@@ -17,7 +17,6 @@ export default function App() {
     setQuestionsArr(generateRandomArr(state.database[e.target.value], 10));
   }
 
-  console.log(state);
   return (
     <div className='App'>
       <QuizProvider>
@@ -30,16 +29,9 @@ export default function App() {
         {state.page === 'splash' && 
           <div className='splash-page' data-testid='splash'>
             <h1>Test your smarts with one of these categories:</h1>
-            <button data-testid='splash-button' onClick={handleSplash} value='general'>General Knowledge</button>
-            <button data-testid='splash-button' onClick={handleSplash} value='animal'>Animal Kingdom</button>
-            <button data-testid='splash-button' onClick={handleSplash} value='myth'>Mythology</button>
-            <button data-testid='splash-button' onClick={handleSplash} value='science'>Science &#38; Nature</button>
-            <button data-testid='splash-button' onClick={handleSplash} value='geography'>Geography</button>
-            <button data-testid='splash-button' onClick={handleSplash} value='art'>Art</button>
-            <button data-testid='splash-button' onClick={handleSplash} value='cartoon'>Cartoon &#38; Animations</button>
-            <button data-testid='splash-button' onClick={handleSplash} value='history'>History</button>
-            <button data-testid='splash-button' onClick={handleSplash} value='film'>Film</button>
-            <button data-testid='splash-button' onClick={handleSplash} value='music'>Music</button>
+            {Object.entries(categories).map(([target, category], index) => {
+              return <button data-testid='splash-button' onClick={handleSplash} value={target} key={index}>{category}</button>
+            })}
             <p>All questions courtesy of <a href='https://opentdb.com/' target='_blank' rel='noreferrer'>Open Trivia Database</a></p>
           </div>
         }

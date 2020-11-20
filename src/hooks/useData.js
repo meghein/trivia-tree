@@ -9,6 +9,19 @@ export default function useData() {
     questionsArr: [],
   });
 
+  const categories = {
+    general: 'General Knowledge',
+    animal: 'Animal Kingdom',
+    myth: 'Mythology',
+    science: 'Science & Nature',
+    geography: 'Geography',
+    art: 'Art',
+    cartoon: 'Cartoon & Animation',
+    history: 'History',
+    film: 'Film',
+    music: 'Music'
+  }
+
   const setPage = page => dispatch({ type: ACTIONS.PAGE, payload: page })
 
   const setQuestionsArr = arr => dispatch({ type: ACTIONS.QUESTIONS_ARR, payload: arr })
@@ -45,6 +58,7 @@ export default function useData() {
   }, [])
 
   return {
+    categories,
     state,
     setPage,
     setQuestionsArr,
