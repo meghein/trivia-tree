@@ -16,7 +16,6 @@ export default function App() {
     // create round of 10 question from data store:
     setQuestionsArr(generateRandomArr(state.database[e.target.value], 10));
   }
-
   return (
     <div className='App'>
       <QuizProvider>
