@@ -1,4 +1,4 @@
-const ACTION = {
+const ACTIONS = {
   DATABASE: 'database',
   PAGE: 'page',
   QUESTIONS_ARR: 'quesionsArr'
@@ -6,11 +6,11 @@ const ACTION = {
 
 export default function reducer(state, action) {
   switch(action.type) {
-    case ACTION.DATABASE:
+    case ACTIONS.DATABASE:
       return({...state, database: action.payload})
-    case ACTION.PAGE:
+    case ACTIONS.PAGE:
       return({...state, page: action.payload})
-    case ACTION.QUESTIONS_ARR:
+    case ACTIONS.QUESTIONS_ARR:
       return({...state, questionsArr: action.payload})
     default:
       throw new Error(
@@ -19,4 +19,4 @@ export default function reducer(state, action) {
   }
 }
 
-export { ACTION }
+export { ACTIONS }
