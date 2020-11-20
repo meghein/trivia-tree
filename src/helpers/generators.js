@@ -9,32 +9,58 @@ export function generateRandomArr(arr, newLength) {
 }
 
 export function removeEntities(str) {
-  const dblQuotes = ['&quot;', '&ldquo;', '&rdquo;'];
-  const singleQuotes = ['&#039;', '&rsquo;'];
-  const diaeresis = '&euml;';
-  const ellipsis = '&hellip;';
-
-  for (let entity of dblQuotes) {
-    if (str.includes(entity))  {
-      str = str.replaceAll(entity, '"')
-    }
-  }
-  for (let entity of singleQuotes) {
-    if (str.includes(entity))  {
-      str = str.replaceAll(entity, '\'')
-    }
-  }
-  if(str.includes(diaeresis)) {
-    str = str.replaceAll(diaeresis, 'ë')
-  }
-  if(str.includes(ellipsis)) {
-    str = str.replaceAll(ellipsis, '...')
+  const entities = {
+    '&quot;': '"',
+    '&ldquo;': '"', 
+    '&rdquo;': '"',
+    '&#039;': '\'',
+    '&rsquo;': '\'',
+    '&euml;': 'ë',
+    '&hellip;': '...',
+    '&amp;': '&',
   }
   if (str.includes('&')) {
     console.log(str)
   }
+  for (const entity in entities) {
+    if(str.includes(entity)) {
+      str = str.replaceAll(entity, entities[entity])
+    }
+  }
   return str;
 }
+
+// export function removeEntities(str) {
+//   const dblQuotes = ['&quot;', '&ldquo;', '&rdquo;'];
+//   const singleQuotes = ['&#039;', '&rsquo;'];
+//   const diaeresis = '&euml;';
+//   const ellipsis = '&hellip;';
+//   const ampersand ='&amp;'
+
+//   for (let entity of dblQuotes) {
+//     if (str.includes(entity))  {
+//       str = str.replaceAll(entity, '"')
+//     }
+//   }
+//   for (let entity of singleQuotes) {
+//     if (str.includes(entity))  {
+//       str = str.replaceAll(entity, '\'')
+//     }
+//   }
+//   if(str.includes(diaeresis)) {
+//     str = str.replaceAll(diaeresis, 'ë')
+//   }
+//   if(str.includes(ellipsis)) {
+//     str = str.replaceAll(ellipsis, '...')
+//   }
+//   if(str.includes(ampersand)) {
+//     str = str.replaceAll(ampersand, '&')
+//   }
+//   if (str.includes('&')) {
+//     console.log(str)
+//   }
+//   return str;
+// }
 
 // Creates a randomly ordered array of answers:
 export function generateRandomAnswers(correct, incorrect) {
