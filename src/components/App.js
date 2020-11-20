@@ -28,9 +28,11 @@ export default function App() {
         {state.page === 'splash' && 
           <div className='splash-page' data-testid='splash'>
             <h1>Test your smarts with one of these categories:</h1>
-            {Object.entries(categories).map(([target, category], index) => {
-              return <button data-testid='splash-button' onClick={handleSplash} value={target} key={index}>{category}</button>
-            })}
+            <div id='categories'>
+              {Object.entries(categories).map(([target, category], index) => {
+                return <button data-testid='splash-button' onClick={handleSplash} value={target} key={index}>{category}</button>
+              })}
+            </div>
             <p>All questions courtesy of <a href='https://opentdb.com/' target='_blank' rel='noreferrer'>Open Trivia Database</a></p>
           </div>
         }

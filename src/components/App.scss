@@ -12,9 +12,20 @@
     h1 {
       margin-bottom: 50px;
     }
-    button {
-      margin: .5em;
-      font-size: 2em;
+    #categories {
+      button {
+        margin: .5em;
+        font-size: 2em;
+      }
+      &:hover > button {
+        opacity: 0.8;
+      }
+      &:hover > button:hover {
+      opacity: 1.0;
+      }
+    }
+    p {
+      padding-top: 5em;
     }
     @media (max-width: 768px) {
       max-width: 95%;
