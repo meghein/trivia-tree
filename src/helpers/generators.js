@@ -8,6 +8,7 @@ export function generateRandomArr(arr, newLength) {
   return resultsArr;
 }
 
+// Removes html entities and replaces them with correct symbol:
 export function removeEntities(str) {
   const entities = {
     '&quot;': '"',
@@ -19,9 +20,6 @@ export function removeEntities(str) {
     '&hellip;': '...',
     '&amp;': '&',
   }
-  if (str.includes('&')) {
-    console.log(str)
-  }
   for (const entity in entities) {
     if(str.includes(entity)) {
       str = str.replaceAll(entity, entities[entity])
@@ -29,38 +27,6 @@ export function removeEntities(str) {
   }
   return str;
 }
-
-// export function removeEntities(str) {
-//   const dblQuotes = ['&quot;', '&ldquo;', '&rdquo;'];
-//   const singleQuotes = ['&#039;', '&rsquo;'];
-//   const diaeresis = '&euml;';
-//   const ellipsis = '&hellip;';
-//   const ampersand ='&amp;'
-
-//   for (let entity of dblQuotes) {
-//     if (str.includes(entity))  {
-//       str = str.replaceAll(entity, '"')
-//     }
-//   }
-//   for (let entity of singleQuotes) {
-//     if (str.includes(entity))  {
-//       str = str.replaceAll(entity, '\'')
-//     }
-//   }
-//   if(str.includes(diaeresis)) {
-//     str = str.replaceAll(diaeresis, 'ë')
-//   }
-//   if(str.includes(ellipsis)) {
-//     str = str.replaceAll(ellipsis, '...')
-//   }
-//   if(str.includes(ampersand)) {
-//     str = str.replaceAll(ampersand, '&')
-//   }
-//   if (str.includes('&')) {
-//     console.log(str)
-//   }
-//   return str;
-// }
 
 // Creates a randomly ordered array of answers:
 export function generateRandomAnswers(correct, incorrect) {
