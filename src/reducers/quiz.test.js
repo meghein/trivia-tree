@@ -1,4 +1,4 @@
-import reducer, { ACTION } from './reducer';
+import reducer, { ACTION } from './quiz';
 
 const testState = {
   quiz: [],

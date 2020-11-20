@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { QuizContext } from 'context/Provider';
-import { ACTION } from 'reducer/reducer';
+import { ACTION } from 'reducers/quiz';
 // import questions from 'data/questions.json';
 // import { generateRandomArr } from 'helpers/generators';
 import './style.scss';

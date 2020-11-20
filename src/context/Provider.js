@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
-import reducer from 'reducer/reducer';
+import reducer from 'reducers/quiz';
 export const QuizContext = createContext();
 
 export default function QuizProvider({children}) {
