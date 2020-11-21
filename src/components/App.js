@@ -29,7 +29,7 @@ export default function App() {
           <div className='splash-page' data-testid='splash'>
             <h1>Test your smarts with one of these categories:</h1>
             <div id='categories'>
-              {Object.entries(categories).map(([target, category], index) => {
+              {Object.entries(categories).sort().map(([target, category], index) => {
                 return <button data-testid='splash-button' onClick={handleSplash} value={target} key={index}>{category}</button>
               })}
             </div>
