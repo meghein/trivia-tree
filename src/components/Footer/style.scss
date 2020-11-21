@@ -2,19 +2,20 @@
 footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   width: 95%;
   position: fixed;
   bottom: 0;
-  margin-bottom: .5em;
-  a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
+  margin-bottom: .6em;
+  .name {
+    margin: 0;
   }
   .links {
     font-size: 1.8em;
     a {
       padding-left: .5em;
+      text-decoration: none;
+      color: inherit;
     }
     &:hover > a {
       opacity: 0.5;
