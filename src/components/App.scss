@@ -24,8 +24,14 @@
       opacity: 1.0;
       }
     }
-    p {
+    .open-trivia {
+      position: absolute;
+      width: 80%;
       padding-top: 5em;
+      a {
+        text-decoration: underline;
+        color: inherit;
+      }
     }
     @media (max-width: 768px) {
       max-width: 95%;

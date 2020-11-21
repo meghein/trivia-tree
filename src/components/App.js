@@ -33,7 +33,7 @@ export default function App() {
                 return <button data-testid='splash-button' onClick={handleSplash} value={target} key={index}>{category}</button>
               })}
             </div>
-            <p>All questions courtesy of <a href='https://opentdb.com/' target='_blank' rel='noreferrer'>Open Trivia Database</a></p>
+            <p className='open-trivia'>All questions courtesy of <a href='https://opentdb.com/' target='_blank' rel='noreferrer'>Open Trivia Database</a></p>
           </div>
         }
         {state.page === 'quiz' &&
