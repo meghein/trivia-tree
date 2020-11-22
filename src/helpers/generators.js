@@ -1,3 +1,15 @@
+import { entities } from './htmlEntities';
+
+// Removes html entities and replaces them with correct symbol:
+export function removeEntities(str) {
+  for (const entity in entities) {
+    if(str.includes(entity)) {
+      str = str.replaceAll(entity, entities[entity])
+    }
+  }
+  return str;
+}
+
 // Loops through an array and prints a new randomly ordered array of a specified length:
 export function generateRandomArr(arr, newLength) {
   const resultsArr = [];
@@ -6,26 +18,6 @@ export function generateRandomArr(arr, newLength) {
     resultsArr.includes(newElm) ? newLength += 1 : resultsArr.push(newElm);
   }
   return resultsArr;
-}
-
-// Removes html entities and replaces them with correct symbol:
-export function removeEntities(str) {
-  const entities = {
-    '&quot;': '"',
-    '&ldquo;': '"', 
-    '&rdquo;': '"',
-    '&#039;': '\'',
-    '&rsquo;': '\'',
-    '&euml;': 'ë',
-    '&hellip;': '...',
-    '&amp;': '&',
-  }
-  for (const entity in entities) {
-    if(str.includes(entity)) {
-      str = str.replaceAll(entity, entities[entity])
-    }
-  }
-  return str;
 }
 
 // Creates a randomly ordered array of answers:
