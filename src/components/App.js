@@ -9,15 +9,14 @@ import './App.scss';
 export default function App() {
   const { categories, state, setPage, setQuestionsArr } = useData();
 
+  // Checks for any html entities left in database on initial load:
   useEffect(() => {
     entityCheck(state.database)
   }, [state.database])
 
   function handleSplash(e) {
-    // toggle splash-page/quiz components:
     setPage('quiz');
-
-    // create round of 10 question from data store:
+    // Create round of 10 question from database:
     setQuestionsArr(generateRandomArr(state.database[e.target.value], 10));
   }
   return (
