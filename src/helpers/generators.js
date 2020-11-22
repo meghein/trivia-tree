@@ -10,6 +10,34 @@ export function removeEntities(str) {
   return str;
 }
 
+// Checks if there are any entities left in the database and prints them to the console for debugging:
+export function entityCheck(database) {
+  // Placeholder for question and answers strings:
+  const contentArr = []
+
+  // Loop through database to extract question and answers strings:
+  for (const object in database) {
+    for ( const key in database[object]) {
+      contentArr.push(database[object][key].question)
+      contentArr.push(database[object][key].correct_answer)
+      for (const answer of database[object][key].incorrect_answers) {
+        contentArr.push(answer)
+      }
+    }
+  }
+
+  for (let str of contentArr) {
+    // Replace ampersand with the word 'and' temporarily for test:
+    if (str.includes('&amp;')) {
+      str = str.replaceAll('&amp;', 'and')
+    }
+    // Print any string that contains entities not already defined in entities object:
+    if (removeEntities(str).includes('&')) {
+      console.log(str)
+    }
+  }
+}
+
 // Loops through an array and prints a new randomly ordered array of a specified length:
 export function generateRandomArr(arr, newLength) {
   const resultsArr = [];

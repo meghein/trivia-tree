@@ -3,7 +3,7 @@ const entities = {
   '&ldquo;': '"', 
   '&rdquo;': '"',
   '&#039;': '\'',
-  '&amp;': 'and',
+  '&amp;': '&',
   '&hellip;': '...',
   '&lt;': '<',
   '&gt;': '>',

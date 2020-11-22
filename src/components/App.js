@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import useData from 'hooks/useData';
 import QuizProvider from 'context/Provider';
-import { generateRandomArr, removeEntities } from 'helpers/generators';
+import { generateRandomArr, entityCheck } from 'helpers/generators';
 import Quiz from './Quiz';
 import Footer from './Footer';
 import './App.scss';
@@ -10,23 +10,7 @@ export default function App() {
   const { categories, state, setPage, setQuestionsArr } = useData();
 
   useEffect(() => {
-    // console.log(state.database)
-    for (const object in state.database) {
-      for ( const key in state.database[object]) {
-        const category = state.database[object][key]
-        if(removeEntities(category.question).includes('&')) {
-          console.log(category.question)
-        }
-        if(removeEntities(category.correct_answer).includes('&')) {
-          console.log(category.correct_answer)
-        }
-        for (const answer of category.incorrect_answers) {
-          if(removeEntities(answer).includes('&')) {
-            console.log(answer)
-          }
-        }
-      }
-    }
+    entityCheck(state.database)
   }, [state.database])
 
   function handleSplash(e) {
