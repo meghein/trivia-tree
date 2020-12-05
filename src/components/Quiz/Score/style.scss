@@ -30,12 +30,61 @@
       font-size: 3.5em;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 400px;
+    max-height: 300px;
+    h1 {
+      font-size: 3em;
+      margin: .5em;
+    }
+    h2 {
+      font-size: 2.5em;
+    }
+  }
+
   @media (max-width: 500px) {
-    margin-top: -10em;
     width: 200px;
-    height: 300px;
+    max-height: 280px;
+    padding: 1.5em;
     h1 {
       font-size: 2.5em;
+      margin: .4em;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    .play-again {
+      font-size: 1.5em;
+    }
+  }
+  
+  @media (max-height: 595px) {
+    width: 450px;
+    max-height: 300px;
+  }
+
+  @media (max-height: 500px) {
+    max-width: 280px;
+    max-height: 180px;
+    h1 {
+      font-size: 2.5em;
+      margin: .2em;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    .play-again {
+      font-size: 1.5em;
+    }
+  }
+
+  @media (max-height: 600px) and (max-width: 320px) {
+    max-width: 200px;
+    max-height: 260px;
+    h1 {
+      font-size: 2.5em;
+      margin: .2em;
     }
     h2 {
       font-size: 2em;
