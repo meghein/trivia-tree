@@ -6,16 +6,7 @@ import {
   generateRandomArr
 } from './generators';
 
-import questions from 'data/questions.json';
-
-/* 
-SINGLE QUESTION FOR REFERENCE:
-const question = {
-  'question': 'What was Tandem previous name?',
-  'incorrect': ['Tandem', 'Burger Shack', 'Extraordinary Humans'],
-  'correct': 'Devmynd'
-}
-*/
+import questions from './testData.json';
 
 const choices = ['Tandem', 'Burger Shack', 'Extraordinary Humans', 'Devmynd'];
 const correctChoice = 'Devmynd';

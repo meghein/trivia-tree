@@ -25,7 +25,7 @@ export default function App() {
         {state.page === 'initial' &&
           <div>
             <h1>Welcome to Trivia Tree!</h1>
-            <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div data-testid='spinner' className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
           </div>
         }
         {state.page === 'splash' && 
