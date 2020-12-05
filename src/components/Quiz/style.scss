@@ -3,8 +3,8 @@
 #quiz {
   display: grid;
   grid-template:
-  [row1-start] 'question' 100px [row1-end]
-  [row2-start] 'choices' auto [row2-end]
+  [row1-start] 'question' auto [row1-end]
+  [row2-start] 'choices' 1.5fr [row2-end]
   [row3-start] 'progress' 50px [row3-end]
   / 1fr;
   height: 500px;
@@ -19,8 +19,9 @@
   }
   h2 {
     grid-area: question;
+    margin: 0;
+    padding-top: .5em;
     padding-bottom: 1em;
-    margin: auto;
     color: $indigo;
     font-size: 1.8em;
   }
@@ -32,36 +33,42 @@
     }
   }
   @media (max-width: 500px) {
-    margin-top: -9em;
+    // margin-top: -9em;
     width: 200px;
     height: 350px;
-    padding: 2em;
+    padding: 1.5em;
     grid-template:
-      [row1-start] 'question' 70px [row1-end]
-      [row2-start] 'choices' auto [row2-end]
+      [row1-start] 'question' auto [row1-end]
+      [row2-start] 'choices' 1.5fr [row2-end]
       [row3-start] 'progress' 30px [row3-end]
       / 1fr;
     h2 {
       margin-top: 0;
-      font-size: .8em;
+      padding-bottom: 1em;
+      font-size: .87em;
     }
   }
+  
   @media (max-height: 595px) {
     width: 450px;
-    height: 300px;
+    max-height: 300px;
   }
   @media (max-height: 500px) {
-    width: 200px;
+    min-width: 200px;
     height: 200px;
     padding: 1.2em;
     grid-template:
-      [row1-start] 'question' 30px [row1-end]
-      [row2-start] 'choices' auto [row2-end]
+      [row1-start] 'question' auto [row1-end]
+      [row2-start] 'choices' 1.5fr [row2-end]
       [row3-start] 'progress' 20px [row3-end]
-      / 1fr;
+      / 1fr;  
     h2 {
       font-size: .8em;
       margin-top: -1em;
     }
+  }
+  @media (max-height: 600px) and (max-width: 320px) {
+    max-width: 200px;
+    max-height: 500px;
   }
 }
